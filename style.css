@@ -222,15 +222,6 @@ footer {
 
 }
 
-.submenu-item:hover .submenu-level2{
-
-    opacity:1;
-
-    visibility:visible;
-
-    transform:translateX(0);
-
-}
 
 .submenu-level2 a{
 
