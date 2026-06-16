@@ -50,33 +50,35 @@ header {
 }
 
 .mega-menu{
+    position:absolute;
+    top:100%;
+    left:50%;
+    transform:translate(-50%,20px);
 
-position:absolute;
-top:100%;
-left:0;
+    width:min(1200px,95vw);
 
-width:900px;
+    background:#fff;
+    padding:20px;
 
-background:#fff;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
 
-padding:20px;
+    border-radius:10px;
+    box-shadow:0 10px 25px rgba(0,0,0,.2);
 
-display:grid;
-grid-template-columns:repeat(4,minmax(220px,1fr));
-gap:20px;
-max-width:95vw;
+    opacity:0;
+    visibility:hidden;
 
-box-shadow:0 10px 20px rgba(0,0,0,.2);
+    transition:.35s;
 
-opacity:0;
-visibility:hidden;
+    z-index:9999;
+}
 
-transform:translateY(20px);
-
-transition:all 0.35s ease;
-
-z-index:999;
-
+.mega:hover>.mega-menu{
+    opacity:1;
+    visibility:visible;
+    transform:translate(-50%,0);
 }
 
 
@@ -163,10 +165,12 @@ footer {
 }
 /* Menu cấp 2 */
 
+/*=========================
+MENU CẤP 2 - CẤP 3
+==========================*/
+
 .submenu-item{
-
     position:relative;
-
 }
 
 .submenu-level2{
@@ -177,25 +181,83 @@ footer {
 
     left:100%;
 
-    min-width:260px;
+    min-width:320px;
+
+    max-width:420px;
 
     background:#fff;
 
     border-radius:8px;
 
-    box-shadow:0 6px 15px rgba(0,0,0,.2);
-
     padding:8px 0;
+
+    box-shadow:0 6px 15px rgba(0,0,0,.2);
 
     opacity:0;
 
     visibility:hidden;
 
-    transform:translateX(10px);
+    transform:translateX(12px);
 
     transition:.25s;
 
-    z-index:1000;
+    z-index:9999;
+
+}
+
+.submenu-item:hover>.submenu-level2{
+
+    opacity:1;
+
+    visibility:visible;
+
+    transform:translateX(0);
+
+}
+
+/* submenu nằm trong submenu */
+
+.submenu-level2 .submenu-item{
+
+    position:relative;
+
+}
+
+.submenu-level2 .submenu-item>.submenu-level2{
+
+    top:0;
+
+    left:100%;
+
+}
+
+.submenu-level2 a{
+
+    display:block;
+
+    padding:10px 15px;
+
+    color:#333;
+
+    text-decoration:none;
+
+    line-height:1.5;
+
+    white-space:normal;
+
+    font-size:14px;
+
+    transition:.2s;
+
+}
+
+.submenu-level2 a:hover{
+
+    background:#eaf4ff;
+
+    color:#0066cc;
+
+    padding-left:20px;
 
 }
 
@@ -235,9 +297,19 @@ footer {
 }
 
 .column{
-    flex:1;
+
     min-width:220px;
+
     position:relative;
+
+}
+
+.column h3{
+
+    margin-bottom:12px;
+
+    color:#0066cc;
+
 }
 
 .submenu-item:hover > .submenu-level2{
@@ -263,4 +335,63 @@ footer {
 .submenu-level2 a{
     line-height:1.5;
     white-space:normal;
+}
+/* ==========================
+FIX OVERFLOW MENU
+========================== */
+
+.navbar{
+
+    position:relative;
+
+    z-index:100;
+
+}
+
+.menu>li{
+
+    position:relative;
+
+}
+
+.mega{
+
+    position:relative;
+
+}
+
+.column{
+
+    overflow:visible;
+
+}
+
+.mega-menu{
+
+    overflow:visible;
+
+}
+
+/* tránh submenu bị che */
+
+.submenu-level2{
+
+    overflow:visible;
+
+}
+
+/* xuống dòng cho tên dài */
+
+.submenu-level2 a{
+
+    word-break:break-word;
+
+}
+
+/* hiệu ứng */
+
+.submenu-level2 a{
+
+    transition:all .2s;
+
 }
