@@ -52,44 +52,45 @@ header {
 .mega-menu{
     position:absolute;
     top:100%;
-    left:50%;
-    transform:translate(-50%,20px);
+    left:0;
 
-    width:min(1200px,95vw);
-
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:20px;
+    width:900px;
 
     background:#fff;
     padding:20px;
-    border-radius:10px;
 
-    box-shadow:0 10px 25px rgba(0,0,0,.2);
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+
+    gap:20px;
+
+    box-shadow:0 10px 20px rgba(0,0,0,.2);
 
     opacity:0;
     visibility:hidden;
 
-    transition:.3s;
+    transform:translateY(20px);
+    transition:all .35s ease;
 
-    z-index:9999;
-
-    overflow:visible;
+    z-index:999;
 }
 
-.mega:hover>.mega-menu{
+.mega:hover .mega-menu{
 
-    opacity:1;
+opacity:1;
 
-    visibility:visible;
+visibility:visible;
 
-    transform:translate(-50%,0);
+transform:translateY(0);
 
 }
 
-.column h3{
-    color:#0066cc;
-    margin-bottom:12px;
+.column h3 {
+    flex: 1;
+    min-width: 200px;
+    box-sizing: border-box;
+    color: #0066cc;
+    margin-bottom: 10px;
 }
 
 .column a {
@@ -155,19 +156,13 @@ footer {
     padding: 18px;
     margin-top: 20px;
 }
-/*=========================
-MENU CẤP 2 - CẤP 3
-==========================*/
-
-/* ==========================
-MENU CẤP 2 - CẤP 3
-========================== */
+/* Menu cấp 2 */
 
 .submenu-item{
-    position:relative;
-}
 
-/* Menu con */
+    position:relative;
+
+}
 
 .submenu-level2{
 
@@ -177,23 +172,15 @@ MENU CẤP 2 - CẤP 3
 
     left:100%;
 
-    min-width:320px;
-
-    max-width:420px;
-
-    max-height:80vh;
-
-    overflow-y:auto;
-
-    overflow-x:hidden;
+    min-width:260px;
 
     background:#fff;
 
     border-radius:8px;
 
-    padding:8px 0;
-
     box-shadow:0 6px 15px rgba(0,0,0,.2);
+
+    padding:8px 0;
 
     opacity:0;
 
@@ -201,16 +188,13 @@ MENU CẤP 2 - CẤP 3
 
     transform:translateX(10px);
 
-    transition:opacity .25s ease,
-               transform .25s ease;
+    transition:.25s;
 
-    z-index:9999;
+    z-index:1000;
 
 }
 
-/* Hover chỉ mở menu con trực tiếp */
-
-.submenu-item:hover > .submenu-level2{
+.submenu-item:hover .submenu-level2{
 
     opacity:1;
 
@@ -220,48 +204,19 @@ MENU CẤP 2 - CẤP 3
 
 }
 
-/* Cho phép lồng nhiều cấp */
-
-.submenu-level2 .submenu-item{
-
-    position:relative;
-
-}
-
-/* Menu cấp 3 */
-
-.submenu-level2 .submenu-item > .submenu-level2{
-
-    top:0;
-
-    left:100%;
-
-}
-
-/* Link */
-
 .submenu-level2 a{
 
     display:block;
 
-    padding:10px 15px;
+    padding:8px 15px;
 
     color:#333;
 
     text-decoration:none;
 
-    line-height:1.5;
-
     font-size:14px;
 
-    white-space:normal;
-
-    word-break:break-word;
-
-    overflow-wrap:anywhere;
-
-    transition:all .2s;
-
+    
 }
 
 .submenu-level2 a:hover{
@@ -270,212 +225,153 @@ MENU CẤP 2 - CẤP 3
 
     color:#0066cc;
 
-    padding-left:20px;
+    padding-left:22px;
 
 }
+/* ===================== */
+/* HAMBURGER MENU */
+/* ===================== */
 
-/* Thanh cuộn */
-
-.submenu-level2::-webkit-scrollbar{
-
-    width:6px;
-
-}
-
-.submenu-level2::-webkit-scrollbar-thumb{
-
-    background:#c7d8ea;
-
-    border-radius:10px;
-
-}
-
-.submenu-level2{
-
-    scrollbar-width:thin;
-
-}
-
-/* Nếu menu sát mép phải màn hình */
-
-.submenu-item:last-child > .submenu-level2{
-
-    left:100%;
-
-}
-
-
-
-
-
-.column{
-
-    min-width:220px;
-
-    position:relative;
-
-    display:flex;
-
+.hamburger{
+    display:none;
     flex-direction:column;
-
-    gap:2px;
-
-    overflow:visible;
-
+    cursor:pointer;
+    padding:15px;
 }
 
-.column h3{
-
-    color:#0066cc;
-
-    margin-bottom:12px;
-
+.hamburger span{
+    width:28px;
+    height:3px;
+    background:#fff;
+    margin:4px 0;
+    transition:.3s;
 }
 
-
-/* ==========================
-FIX OVERFLOW MENU
-========================== */
-
-.navbar{
-
-    position:relative;
-
-    z-index:100;
-
+.hamburger.active span:nth-child(1){
+    transform:rotate(45deg) translate(5px,5px);
 }
 
-.menu>li{
-
-    position:relative;
-
+.hamburger.active span:nth-child(2){
+    opacity:0;
 }
 
-.mega{
-
-    position:relative;
-
+.hamburger.active span:nth-child(3){
+    transform:rotate(-45deg) translate(7px,-7px);
 }
 
-.column{
+/* ===================== */
+/* MOBILE */
+/* ===================== */
 
-    overflow:visible;
+@media screen and (max-width:768px){
 
-}
+    body{
+        overflow-x:hidden;
+    }
 
-.mega-menu{
+    .hamburger{
+        display:flex;
+    }
 
-    overflow:visible;
+    .menu{
+        display:none;
+        flex-direction:column;
+        width:100%;
+        background:#003366;
+    }
 
-}
+    .menu.active{
+        display:flex;
+    }
 
-/* tránh submenu bị che */
+    .menu li{
+        width:100%;
+    }
 
-.submenu-level2{
-
-    overflow:visible;
-
-}
-
-/* xuống dòng cho tên dài */
-
-.submenu-level2 a{
-
-    word-break:break-word;
-
-}
-
-/* hiệu ứng */
-
-.submenu-level2 a{
-    transition:all .2s;
-}
-
-/* Mega menu */
-
-.mega-menu{
-    overflow:visible;
-}
-
-.submenu-level2{
-    overflow:visible;
-    max-height:80vh;
-    overflow-y:auto;
-}
-
-/* Scroll */
-
-.submenu-level2::-webkit-scrollbar{
-
-    width:6px;
-
-}
-
-.submenu-level2::-webkit-scrollbar-thumb{
-
-    background:#c8d8ea;
-
-    border-radius:10px;
-
-}
-
-/* xuống dòng */
-
-.submenu-level2 a{
-    word-break:break-word;
-}
-
-/* Responsive */
-
-@media (max-width:768px){
+    .menu > li > a{
+        padding:15px;
+        border-bottom:1px solid rgba(255,255,255,.15);
+    }
 
     .mega-menu{
 
         position:static !important;
 
-        transform:none !important;
-
-        width:100%;
+        width:100% !important;
+        max-width:100% !important;
 
         display:none;
 
-        grid-template-columns:1fr;
+        grid-template-columns:1fr !important;
 
-        max-width:100%;
+        padding:10px;
 
-        opacity:1;
+        gap:10px;
 
-        visibility:visible;
+        opacity:1 !important;
+        visibility:visible !important;
+        transform:none !important;
 
         box-shadow:none;
-
     }
 
-    .mega.active>.mega-menu{
+    .mega.active .mega-menu{
         display:grid;
     }
 
+    .column{
+        width:100%;
+    }
+
     .submenu-level2{
-
-        position:static !important;
-
-        min-width:100%;
-
-        max-width:100%;
-
-        opacity:1;
-
-        visibility:visible;
-
-        transform:none;
-
         display:none;
-
+        position:static !important;
+        width:100%;
+        margin-left:10px;
         box-shadow:none;
+    }
 
-        padding-left:15px;
+    .submenu-level2 a{
+        border-left:3px solid #0066cc;
+        padding:10px;
+    }
 
+    .container{
+        display:block !important;
+        width:100%;
+        padding:10px;
+        margin:0;
+    }
+
+    aside{
+        width:100%;
+        margin-bottom:15px;
+    }
+
+    main{
+        width:100%;
+    }
+
+    .card{
+        width:100%;
+    }
+
+    .top h1{
+        font-size:22px;
+    }
+
+    .top p{
+        font-size:14px;
     }
 
 }
+html,
+body{
+    overflow-x:hidden;
+    max-width:100%;
+}
 
+img{
+    max-width:100%;
+    height:auto;
+}
