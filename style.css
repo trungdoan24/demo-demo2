@@ -159,10 +159,10 @@ footer {
 /* Menu cấp 2 */
 
 .submenu-item{
-
     position:relative;
-
 }
+
+/* menu cấp 2 */
 
 .submenu-level2{
 
@@ -191,6 +191,34 @@ footer {
     transition:.25s;
 
     z-index:1000;
+
+}
+
+/* hover */
+
+.submenu-item:hover > .submenu-level2{
+
+    opacity:1;
+
+    visibility:visible;
+
+    transform:translateX(0);
+
+}
+
+/* submenu nằm trong submenu */
+
+.submenu-level2 .submenu-item{
+
+    position:relative;
+
+}
+
+.submenu-level2 .submenu-item > .submenu-level2{
+
+    top:0;
+
+    left:100%;
 
 }
 
