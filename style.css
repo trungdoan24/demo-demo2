@@ -81,17 +81,6 @@ header {
     transform:translate(-50%,0);
 }
 
-
-.mega:hover .mega-menu{
-
-opacity:1;
-
-visibility:visible;
-
-transform:translateY(0);
-
-}
-
 .column h3 {
     flex: 1;
     min-width: 200px;
@@ -205,15 +194,7 @@ MENU CẤP 2 - CẤP 3
 
 }
 
-.submenu-item:hover>.submenu-level2{
 
-    opacity:1;
-
-    visibility:visible;
-
-    transform:translateX(0);
-
-}
 
 /* submenu nằm trong submenu */
 
@@ -261,40 +242,9 @@ MENU CẤP 2 - CẤP 3
 
 }
 
-.submenu-item:hover .submenu-level2{
 
-    opacity:1;
 
-    visibility:visible;
 
-    transform:translateX(0);
-
-}
-
-.submenu-level2 a{
-
-    display:block;
-
-    padding:8px 15px;
-
-    color:#333;
-
-    text-decoration:none;
-
-    font-size:14px;
-
-    
-}
-
-.submenu-level2 a:hover{
-
-    background:#eaf4ff;
-
-    color:#0066cc;
-
-    padding-left:22px;
-
-}
 
 .column{
 
@@ -312,30 +262,7 @@ MENU CẤP 2 - CẤP 3
 
 }
 
-.submenu-item:hover > .submenu-level2{
-    opacity:1;
-    visibility:visible;
-    transform:translateX(0);
-}
 
-.submenu-level2{
-    min-width:320px;
-    max-width:420px;
-}
-
-.submenu-level2 .submenu-item{
-    position:relative;
-}
-
-.submenu-level2 .submenu-item > .submenu-level2{
-    top:0;
-    left:100%;
-}
-
-.submenu-level2 a{
-    line-height:1.5;
-    white-space:normal;
-}
 /* ==========================
 FIX OVERFLOW MENU
 ========================== */
@@ -390,8 +317,4 @@ FIX OVERFLOW MENU
 
 /* hiệu ứng */
 
-.submenu-level2 a{
 
-    transition:all .2s;
-
-}
