@@ -17,7 +17,30 @@
             text-align: center;
             box-shadow: 0 3px 10px rgba(0, 0, 0, .2);
         }
+.top{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:15px;
+}
 
+.logo-td24{
+    width:64px;
+    height:64px;
+    flex-shrink:0;
+}
+
+.header-text{
+    text-align:left;
+}
+
+.header-text h1{
+    margin:0;
+}
+
+.header-text p{
+    margin-top:5px;
+}
         .top h1 {
             font-size: 38px;
             margin-bottom: 10px;
