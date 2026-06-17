@@ -7,53 +7,61 @@
         }
 
         body {
-            background: #eef3f8;
+            background: #F4F8F6;
         }
 
         header {
-            background: linear-gradient(135deg, #1d6600, #00cc6d);
-            color: white;
-            padding: 30px;
+            background: linear-gradient(135deg, #008C2F, #00C853);
+            color: #fff;
+            padding: 18px 10px;
             text-align: center;
             box-shadow: 0 3px 10px rgba(0, 0, 0, .2);
+            border-bottom: 3px solid #FFD600;
         }
-.top{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:15px;
-}
 
-.logo-td24{
-    width:64px;
-    height:64px;
-    flex-shrink:0;
-}
+        .top {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+        }
 
-.header-text{
-    text-align:left;
-}
+        .logo-td24 {
+            width: 64px;
+            height: 64px;
+        }
 
-.header-text h1{
-    margin:0;
-}
+        .header-text h1 {
+            font-size: 38px;
+            font-weight: 700;
+            color: #fff;
+            text-transform: uppercase;
+            margin: 0;
+        }
 
-.header-text p{
-    margin-top:5px;
-}
+        .header-text p {
+            color: #f5f5f5;
+            font-size: 14px;
+            margin-top: 4px;
+        }
+
         .top h1 {
             font-size: 38px;
             margin-bottom: 10px;
         }
 
         .navbar {
-            background: #006616;
+            background: #006C2E;
+            border-bottom: 2px solid #00C853;
         }
 
         .menu {
             display: flex;
             justify-content: center;
+            align-items: center;
             list-style: none;
+            margin: 0;
+            padding: 0;
         }
 
         .menu>li {
@@ -62,15 +70,33 @@
 
         .menu>li>a {
             display: block;
-            padding: 18px 22px;
+            padding: 14px 18px;
             text-decoration: none;
-            color: white;
-            font-weight: bold;
+            color: #fff;
+            font-size: 14px;
+            font-weight: 600;
             transition: .3s;
+            text-transform: uppercase;
         }
 
-        .menu>li:hover {
-            background: #0055aa;
+        .menu>li:hover,
+        .menu>li:hover>a {
+            background: #00A651;
+            color: #fff;
+        }
+
+        .menu>li:not(:last-child)::after {
+            content: "";
+            position: absolute;
+            top: 10px;
+            right: 0;
+            width: 1px;
+            height: 28px;
+
+            background: rgba(255, 255, 255, .25);
+
+            box-shadow:
+                1px 0 0 rgba(0, 0, 0, .25);
         }
 
         .mega-menu {
@@ -84,6 +110,7 @@
             overflow-x: hidden;
 
             background: #fff;
+            border-top: 4px solid #00C853;
             padding: 20px;
 
             display: grid;
@@ -115,8 +142,10 @@
             flex: 1;
             min-width: 200px;
             box-sizing: border-box;
-            color: #0066cc;
+            color: #008C2F;
             margin-bottom: 10px;
+            border-bottom: 2px solid #E8F5E9;
+            padding-bottom: 6px;
         }
 
         .column a {
@@ -128,8 +157,8 @@
         }
 
         .column a:hover {
-            background: #eaf4ff;
-            color: #0066cc;
+            background: #E8F5E9;
+            color: #008C2F;
         }
 
         .container {
@@ -161,7 +190,8 @@
         }
 
         .card {
-            background: white;
+            background: #fff;
+            border-left: 5px solid #00C853;
             padding: 20px;
             margin-bottom: 20px;
             border-radius: 10px;
@@ -174,13 +204,14 @@
         }
 
         .card h2 {
-            color: #0055aa;
+            color: #008C2F;
             margin-bottom: 10px;
         }
 
         footer {
-            background: #003366;
-            color: white;
+            background: #006C2E;
+            color: #fff;
+            border-top: 3px solid #00C853;
             text-align: center;
             padding: 18px;
             margin-top: 20px;
@@ -361,7 +392,7 @@
             }
 
             .menu>li {
-                position: static;
+                position: relative;
             }
 
             .mega-menu {
@@ -625,3 +656,4 @@
             max-width: 100%;
             height: auto;
         }
+  
