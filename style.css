@@ -907,3 +907,24 @@ img {
         font-size: 18px;
     }
 }
+
+/* Tiêu đề bài viết */
+
+.news-item-bqp h3 a {
+    color: #333;
+    text-decoration: none;
+    transition: .3s;
+}
+
+/* Hover */
+
+.news-item-bqp h3 a:hover {
+    color: #008C2F;
+    text-decoration: none;
+}
+
+/* Đã truy cập */
+
+.news-item-bqp h3 a:visited {
+    color: #333;
+}
