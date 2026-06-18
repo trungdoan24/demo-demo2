@@ -928,3 +928,29 @@ img {
 .news-item-bqp h3 a:visited {
     color: #333;
 }
+/* MENU NGANG ĐANG ACTIVE */
+.menu > li > a.active-menu,
+.menu > li.active-menu > a {
+    background: #00A843;
+    color: #fff;
+}
+
+/* CỘT PHẢI ĐANG ACTIVE */
+.right-category li a.active-menu,
+.right-category li.active-menu a {
+    background: #e6e6e6;
+    color: #008C2F;
+}
+
+.right-category li a.active-menu::before,
+.right-category li.active-menu a::before {
+    background: #008C2F;
+}
+/* XÓA MÀU XANH VÀ GẠCH CHÂN MẶC ĐỊNH CỦA LINK */
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    color: inherit;
+}
