@@ -48,10 +48,10 @@ header {
     margin-bottom: 10px;
 }
 
-.navbar{
-    max-width:1140px;
-    margin:0 auto;
-    background:#006B1F;
+.navbar {
+    max-width: 1140px;
+    margin: 0 auto;
+    background: #006B1F;
 }
 
 .menu {
@@ -929,9 +929,10 @@ img {
 .news-item-bqp h3 a:visited {
     color: #333;
 }
+
 /* MENU NGANG ĐANG ACTIVE */
-.menu > li > a.active-menu,
-.menu > li.active-menu > a {
+.menu>li>a.active-menu,
+.menu>li.active-menu>a {
     background: #00A843;
     color: #fff;
 }
@@ -947,6 +948,7 @@ img {
 .right-category li.active-menu a::before {
     background: #008C2F;
 }
+
 /* XÓA MÀU XANH VÀ GẠCH CHÂN MẶC ĐỊNH CỦA LINK */
 a {
     text-decoration: none;
@@ -955,22 +957,25 @@ a {
 a:visited {
     color: inherit;
 }
-.banner-header{
-    width:100%;
-    max-width:1140px;
-    margin:0 auto;
-    line-height:0;
+
+.banner-header {
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+    line-height: 0;
 }
 
-.banner-header img{
-    width:100%;
-    height:auto;
-    display:block;
+.banner-header img {
+    width: 100%;
+    height: auto;
+    display: block;
 }
-.container{
-    max-width:1140px;
-    margin:20px auto;
+
+.container {
+    max-width: 1140px;
+    margin: 20px auto;
 }
+
 .banner-header,
 .navbar,
 .container,
@@ -978,4 +983,27 @@ a:visited {
     max-width: 1140px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.pagination {
+    display: flex;
+    justify-content: flex-end;
+    gap: 5px;
+    margin-top: 25px;
+}
+
+.pagination button {
+    min-width: 36px;
+    height: 36px;
+    border: 1px solid #ddd;
+    background: #fff;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.pagination button.active,
+.pagination button:hover {
+    background: #008C2F;
+    color: #fff;
+    border-color: #008C2F;
 }
