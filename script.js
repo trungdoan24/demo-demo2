@@ -91,102 +91,327 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const documents = [
     {
-        title: "Diễn đàn thanh niên với chủ đề Khát vọng thanh niên, đưa Sư đoàn vươn tới danh hiệu anh hùng lần thứ 3",
+        title: "Bài 1 HSQ-BS 2026",
         date: "2026-06-20",
-        time: "15:40",
-        desc: "Tài liệu tọa đàm, diễn đàn thanh niên.",
-        link: "toadam.html"
+        time: "17:00",
+        desc: "Giáo án chính trị HSQ-BS năm 1.",
+        link: "sohoa/CHINHTRI/BAIGIANGCHINHTRI/GIÁO ÁN HSQ - BS NĂM 1/Bài 1 HSQ-BS 2026.pdf"
     },
     {
-        title: "Diễn đàn thanh niên tuổi trẻ Trung đoàn học tập, noi gương Anh hùng LLVTND Vũ Văn Bình",
+        title: "Bài 10 HSQ, BS 2026",
+        date: "2026-06-20",
+        time: "16:55",
+        desc: "Giáo án chính trị HSQ-BS năm 1.",
+        link: "sohoa/CHINHTRI/BAIGIANGCHINHTRI/GIÁO ÁN HSQ - BS NĂM 1/Bài 10 HSQ, BS 2026.pdf"
+    },
+    {
+        title: "Bài 11 HSQ, BS 2026",
+        date: "2026-06-20",
+        time: "16:50",
+        desc: "Giáo án chính trị HSQ-BS năm 1.",
+        link: "sohoa/CHINHTRI/BAIGIANGCHINHTRI/GIÁO ÁN HSQ - BS NĂM 1/Bài 11 HSQ, BS 2026.pdf"
+    },
+    {
+        title: "Bài 12 HSQ, BS 2026",
+        date: "2026-06-20",
+        time: "16:45",
+        desc: "Giáo án chính trị HSQ-BS năm 1.",
+        link: "sohoa/CHINHTRI/BAIGIANGCHINHTRI/GIÁO ÁN HSQ - BS NĂM 1/Bài 12 HSQ, BS 2026.pdf"
+    },
+    {
+        title: "Bài 2 HSQ, BS 2026",
+        date: "2026-06-20",
+        time: "16:40",
+        desc: "Giáo án chính trị HSQ-BS năm 1.",
+        link: "sohoa/CHINHTRI/BAIGIANGCHINHTRI/GIÁO ÁN HSQ - BS NĂM 1/Bài 2 HSQ, BS 2026.pdf"
+    },
+    {
+        title: "Bài 3 HSQ,BS 2026",
+        date: "2026-06-20",
+        time: "16:35",
+        desc: "Giáo án chính trị HSQ-BS năm 1.",
+        link: "sohoa/CHINHTRI/BAIGIANGCHINHTRI/GIÁO ÁN HSQ - BS NĂM 1/Bài 3 HSQ,BS 2026.pdf"
+    },
+    {
+        title: "Bài 4 HSQ,BS 2026",
+        date: "2026-06-20",
+        time: "16:30",
+        desc: "Giáo án chính trị HSQ-BS năm 1.",
+        link: "sohoa/CHINHTRI/BAIGIANGCHINHTRI/GIÁO ÁN HSQ - BS NĂM 1/Bài 4 HSQ,BS 2026.pdf"
+    },
+    {
+        title: "Bài 5 HSQ, BS 2026",
+        date: "2026-06-20",
+        time: "16:25",
+        desc: "Giáo án chính trị HSQ-BS năm 1.",
+        link: "sohoa/CHINHTRI/BAIGIANGCHINHTRI/GIÁO ÁN HSQ - BS NĂM 1/Bài 5 HSQ, BS 2026.pdf"
+    },
+    {
+        title: "Bài 6 HSQ, BS 2026",
+        date: "2026-06-20",
+        time: "16:20",
+        desc: "Giáo án chính trị HSQ-BS năm 1.",
+        link: "sohoa/CHINHTRI/BAIGIANGCHINHTRI/GIÁO ÁN HSQ - BS NĂM 1/Bài 6 HSQ, BS 2026.pdf"
+    },
+    {
+        title: "Bài 7 HSQ, BS 2026",
+        date: "2026-06-20",
+        time: "16:15",
+        desc: "Giáo án chính trị HSQ-BS năm 1.",
+        link: "sohoa/CHINHTRI/BAIGIANGCHINHTRI/GIÁO ÁN HSQ - BS NĂM 1/Bài 7 HSQ, BS 2026.pdf"
+    },
+    {
+        title: "Bài 8 HSQ, BS 2026",
+        date: "2026-06-20",
+        time: "16:10",
+        desc: "Giáo án chính trị HSQ-BS năm 1.",
+        link: "sohoa/CHINHTRI/BAIGIANGCHINHTRI/GIÁO ÁN HSQ - BS NĂM 1/Bài 8 HSQ, BS 2026.pdf"
+    },
+    {
+        title: "Bài 9 HSQ, BS 2026",
+        date: "2026-06-20",
+        time: "16:05",
+        desc: "Giáo án chính trị HSQ-BS năm 1.",
+        link: "sohoa/CHINHTRI/BAIGIANGCHINHTRI/GIÁO ÁN HSQ - BS NĂM 1/Bài 9 HSQ, BS 2026.pdf"
+    },
+
+    {
+        title: "Bài 10: Đấu tranh làm thất bại âm mưu, thủ đoạn diễn biến hòa bình, bạo loạn lật đổ",
         date: "2026-06-19",
-        time: "15:13",
-        desc: "Tài liệu tọa đàm, diễn đàn thanh niên.",
-        link: "toadam.html"
+        time: "17:00",
+        desc: "Giáo án chính trị HSQ-BS năm 2.",
+        link: "sohoa/CHINHTRI/BAIGIANGCHINHTRI/GIÁO ÁN HSQ - BS NĂM 2/Bài 10 “Đấu tranh làm thất bại âm mưu, thủ đoạn ‘diễn biến hòa bình’, bạo loạn lật đổ của các thế lực thù địch chống phá cách mạng Việt Nam hiện nay”.pdf"
     },
     {
-        title: "Diễn đàn thanh niên với chủ đề tuổi trẻ Trung đoàn 24 giữ lửa truyền thống, thắp sáng tương lai",
+        title: "Bài 11: Công tác vận động quần chúng, tham gia xây dựng cơ sở vững mạnh",
+        date: "2026-06-19",
+        time: "16:55",
+        desc: "Giáo án chính trị HSQ-BS năm 2.",
+        link: "sohoa/CHINHTRI/BAIGIANGCHINHTRI/GIÁO ÁN HSQ - BS NĂM 2/Bài 11 Công tác vận động quần chúng, tham gia xây dựng cơ sở vững mạnh của cán bộ, chiến sĩ trong Quân đội hiện nay.pdf"
+    },
+    {
+        title: "Bài 6: Xây dựng Nhà nước pháp quyền xã hội chủ nghĩa Việt Nam hiện nay",
+        date: "2026-06-19",
+        time: "16:50",
+        desc: "Giáo án chính trị HSQ-BS năm 2.",
+        link: "sohoa/CHINHTRI/BAIGIANGCHINHTRI/GIÁO ÁN HSQ - BS NĂM 2/Bài 6 Xây dựng Nhà nước pháp quyền xã hội chủ nghĩa Việt Nam hiện nay.pdf"
+    },
+    {
+        title: "Bài 7: Quan điểm, chính sách dân tộc, tôn giáo của Đảng và Nhà nước ta hiện nay",
+        date: "2026-06-19",
+        time: "16:45",
+        desc: "Giáo án chính trị HSQ-BS năm 2.",
+        link: "sohoa/CHINHTRI/BAIGIANGCHINHTRI/GIÁO ÁN HSQ - BS NĂM 2/Bài 7  Quan điểm, chính sách dân tộc, tôn giáo của Đảng và Nhà nước ta hiện nay..pdf"
+    },
+    {
+        title: "Bài 8: Đường lối, chính sách đối ngoại của Đảng và Nhà nước ta hiện nay",
+        date: "2026-06-19",
+        time: "16:40",
+        desc: "Giáo án chính trị HSQ-BS năm 2.",
+        link: "sohoa/CHINHTRI/BAIGIANGCHINHTRI/GIÁO ÁN HSQ - BS NĂM 2/Bài 8 Đường lối, chính sách đối ngoại của Đảng và Nhà nước ta hiện nay.pdf"
+    },
+    {
+        title: "Bài 9: Quan điểm của Đảng về đối tác, đối tượng của cách mạng Việt Nam trong tình hình mới",
+        date: "2026-06-19",
+        time: "16:35",
+        desc: "Giáo án chính trị HSQ-BS năm 2.",
+        link: "sohoa/CHINHTRI/BAIGIANGCHINHTRI/GIÁO ÁN HSQ - BS NĂM 2/Bài 9 “Quan điểm của Đảng về đối tác, đối tượng của cách mạng Việt Nam trong tình hình mới”..pdf"
+    },
+
+    {
+        title: "Đẩy mạnh học tập, rèn luyện đạo đức cách mạng của quân nhân, phấn đấu xứng danh Bộ đội Cụ Hồ trong thời kỳ mới",
         date: "2026-06-18",
-        time: "14:20",
-        desc: "Tài liệu tọa đàm, diễn đàn thanh niên.",
-        link: "toadam.html"
-    },
-    {
-        title: "Diễn đàn thanh niên với chủ đề tuổi trẻ Trung đoàn 24, bản lĩnh, khát vọng, xung kích sáng tạo, tiên phong, quyết thắng",
-        date: "2026-06-17",
-        time: "10:30",
-        desc: "Tài liệu tọa đàm, diễn đàn thanh niên.",
-        link: "toadam.html"
+        time: "17:00",
+        desc: "Tài liệu chuyên đề.",
+        link: "sohoa/CHINHTRI/CHUYENDE/ĐẨY MẠNH HỌC TẬP, RÈN LUYỆN ĐẠO ĐỨC CÁCH MẠNG CỦA QUÂN NHÂN, PHẤN ĐẤU XỨNG DANH “BỘ ĐỘI CỤ HỒ” TRONG THỜI KỲ MỚI.pdf"
     },
     {
         title: "Học tập và làm theo phong cách diễn đạt Hồ Chí Minh",
-        date: "2026-06-16",
-        time: "17:05",
+        date: "2026-06-18",
+        time: "16:55",
         desc: "Tài liệu chuyên đề.",
-        link: "chuyende.html"
+        link: "sohoa/CHINHTRI/CHUYENDE/HỌC TẬP VÀ LÀM THEO PHONG CÁCH DIỄN ĐẠT HỒ CHÍ MINH.pdf"
     },
     {
         title: "Học tập và làm theo phong cách làm việc Hồ Chí Minh",
-        date: "2026-06-15",
-        time: "15:13",
+        date: "2026-06-18",
+        time: "16:50",
         desc: "Tài liệu chuyên đề.",
-        link: "chuyende.html"
+        link: "sohoa/CHINHTRI/CHUYENDE/HỌC TẬP VÀ LÀM THEO PHONG CÁCH LÀM VIỆC HỒ CHÍ MINH.pdf"
     },
     {
         title: "Học tập và làm theo phong cách ứng xử của Hồ Chí Minh",
-        date: "2026-06-14",
-        time: "14:20",
+        date: "2026-06-18",
+        time: "16:45",
         desc: "Tài liệu chuyên đề.",
-        link: "chuyende.html"
+        link: "sohoa/CHINHTRI/CHUYENDE/HỌC TẬP VÀ LÀM THEO PHONG CÁCH ỨNG XỬ CỦA HỒ CHÍ MINH.pdf"
     },
     {
-        title: "Học tập và làm theo tư tưởng, đạo đức, phong cách Hồ Chí Minh trở thành nhu cầu tự thân của cán bộ, đảng viên, quần chúng trong quân đội hiện nay",
-        date: "2026-06-13",
-        time: "09:00",
+        title: "Học tập và làm theo tư tưởng, đạo đức, phong cách Hồ Chí Minh trở thành nhu cầu tự thân",
+        date: "2026-06-18",
+        time: "16:40",
         desc: "Tài liệu chuyên đề.",
-        link: "chuyende.html"
+        link: "sohoa/CHINHTRI/CHUYENDE/HỌC TẬP VÀ LÀM THEO TƯ TƯỞNG, ĐẠO ĐỨC, PHONG CÁCH HỒ CHÍ MINH TRỞ THÀNH NHU CẦU TỰ THÂN CỦA CÁN BỘ, ĐẢNG VIÊN, QUẦN CHÚNG TRONG QUÂN ĐỘI HIỆN NAY.pdf"
     },
+
     {
-        title: "Luật Sĩ quan Quân đội nhân dân Việt Nam",
-        date: "2026-06-12",
-        time: "08:30",
+        title: "Luật Dân quân tự vệ 2019",
+        date: "2026-06-17",
+        time: "17:00",
         desc: "Văn bản luật.",
-        link: "luat.html"
+        link: "sohoa/CHINHTRI/LUAT/LUẬT DÂN QUÂN TỰ VỆ 2019.pdf"
     },
     {
-        title: "Luật Nghĩa vụ quân sự",
-        date: "2026-06-11",
-        time: "08:00",
+        title: "Luật Lực lượng dự bị động viên",
+        date: "2026-06-17",
+        time: "16:55",
         desc: "Văn bản luật.",
-        link: "luat.html"
+        link: "sohoa/CHINHTRI/LUAT/LUẬT LỰC LƯỢNG DỰ BỊ ĐỘNG VIÊN.pdf"
     },
     {
-        title: "Thông tư công tác Đảng, công tác chính trị",
-        date: "2026-06-10",
-        time: "07:45",
-        desc: "Văn bản thông tư.",
-        link: "thongtu.html"
+        title: "Luật Nghĩa vụ quân sự 2015",
+        date: "2026-06-17",
+        time: "16:50",
+        desc: "Văn bản luật.",
+        link: "sohoa/CHINHTRI/LUAT/LUẬT NGHĨA VỤ QUÂN SỰ 2015.pdf"
     },
     {
-        title: "Nghị định liên quan đến công tác chính trị",
-        date: "2026-06-09",
-        time: "07:30",
+        title: "Luật Quân nhân chuyên nghiệp, công nhân và viên chức quốc phòng 2015",
+        date: "2026-06-17",
+        time: "16:45",
+        desc: "Văn bản luật.",
+        link: "sohoa/CHINHTRI/LUAT/LUẬT QUÂN NHÂN CHUYÊN NGHIỆP, CÔNG NHÂN VÀ VIÊN CHỨC QUỐC PHÒNG 2015.pdf"
+    },
+    {
+        title: "Luật Quốc phòng",
+        date: "2026-06-17",
+        time: "16:40",
+        desc: "Văn bản luật.",
+        link: "sohoa/CHINHTRI/LUAT/LUẬT QUỐC PHÒNG.pdf"
+    },
+    {
+        title: "Luật sửa đổi bổ sung Luật Sĩ quan 2024",
+        date: "2026-06-17",
+        time: "16:35",
+        desc: "Văn bản luật.",
+        link: "sohoa/CHINHTRI/LUAT/LUẬT SỬA ĐỔI BỔ SUNG LUÂT SI QUAN 2024.pdf"
+    },
+
+    {
+        title: "Mẫu kê khai trợ cấp khó khăn HSQ-CS",
+        date: "2026-06-16",
+        time: "17:00",
+        desc: "Mẫu kê khai.",
+        link: "sohoa/CHINHTRI/MAUKEKHAI/Mẫu kê khai trợ cấp khó khăn HSQ-CS.pdf"
+    },
+    {
+        title: "Mẫu kê khai trợ cấp SQ, QNCN",
+        date: "2026-06-16",
+        time: "16:55",
+        desc: "Mẫu kê khai.",
+        link: "sohoa/CHINHTRI/MAUKEKHAI/MẪU kê khai trợ cấp SQ, QNCN.pdf"
+    },
+
+    {
+        title: "Nghị định chế độ tiền lương công chức, viên chức và LLVT",
+        date: "2026-06-15",
+        time: "17:00",
         desc: "Văn bản nghị định.",
-        link: "nghidinh.html"
+        link: "sohoa/CHINHTRI/NGHIDINH/NGHỊ ĐỊNH CHẾ ĐỘ TIỀN LƯƠNG CÔNG CHỨC, VIÊN CHỨC VÀ LLVT.pdf"
+    },
+
+    {
+        title: "Tài liệu giáo dục chính trị cho đảng viên mới",
+        date: "2026-06-14",
+        time: "17:00",
+        desc: "Tài liệu giáo dục chính trị.",
+        link: "sohoa/CHINHTRI/TAILIEUGIAODUC/TÀI LIỆU GIÁO DỤC CHÍNH TRỊ CHO ĐẢNG VIÊN MỚI.pdf"
     },
     {
-        title: "Mẫu kê khai phục vụ công tác chính trị",
-        date: "2026-06-08",
-        time: "07:15",
-        desc: "Mẫu biểu, tài liệu kê khai.",
-        link: "maukehai.html"
+        title: "Tài liệu giáo dục chính trị cho đối tượng nhận thức về Đảng năm 2026",
+        date: "2026-06-14",
+        time: "16:55",
+        desc: "Tài liệu giáo dục chính trị.",
+        link: "sohoa/CHINHTRI/TAILIEUGIAODUC/TÀI LIỆU GIÁO DỤC CHÍNH TRỊ CHO ĐỐI TƯỢNG NHẬN THỨC VỀ ĐẢNG NĂM 2026.pdf"
     },
     {
-        title: "Giáo án HSQ, BS",
-        date: "2026-06-07",
-        time: "07:00",
-        desc: "Giáo án chính trị cho hạ sĩ quan, binh sĩ.",
-        link: "giaoanhsqbs.html"
+        title: "Tài liệu học tập chính trị của chiến sĩ mới 2026",
+        date: "2026-06-14",
+        time: "16:50",
+        desc: "Tài liệu giáo dục chính trị.",
+        link: "sohoa/CHINHTRI/TAILIEUGIAODUC/TÀI LIỆU HỌC TẬP CHÍNH TRỊ CỦA CHIẾN SĨ MỚI 2026.pdf"
+    },
+    {
+        title: "Đề cương tuyên truyền truyền thống 80 năm Trung đoàn",
+        date: "2026-06-14",
+        time: "16:45",
+        desc: "Tài liệu giáo dục chính trị.",
+        link: "sohoa/CHINHTRI/TAILIEUGIAODUC/ĐỀ CƯƠNG TUYÊN TRUYỀN TRUYỀN THỐNG 80 NĂM TRUNG ĐOÀN.pdf"
+    },
+
+    {
+        title: "Thông tư 143",
+        date: "2026-06-13",
+        time: "17:00",
+        desc: "Văn bản thông tư.",
+        link: "sohoa/CHINHTRI/THONGTU/THÔNG TƯ 143.pdf"
+    },
+
+    {
+        title: "Diễn đàn thanh niên tuổi trẻ Trung đoàn học tập, noi gương anh hùng LLVTND Vũ Văn Bình - Kế hoạch",
+        date: "2026-06-12",
+        time: "17:00",
+        desc: "Tài liệu tọa đàm.",
+        link: "sohoa/CHINHTRI/TOADAM/Diễn đàn thanh niên tuổi trẻ Trung đoàn học tập, noi gương anh hùng LLVTND Vũ Văn Bình/KẾ HOẠCH.pdf"
+    },
+    {
+        title: "Diễn đàn thanh niên tuổi trẻ Trung đoàn học tập, noi gương anh hùng LLVTND Vũ Văn Bình - Kịch bản",
+        date: "2026-06-12",
+        time: "16:55",
+        desc: "Tài liệu tọa đàm.",
+        link: "sohoa/CHINHTRI/TOADAM/Diễn đàn thanh niên tuổi trẻ Trung đoàn học tập, noi gương anh hùng LLVTND Vũ Văn Bình/KỊCH BẢN.pdf"
+    },
+    {
+        title: "Diễn đàn thanh niên với chủ đề khát vọng thanh niên, đưa Sư đoàn vươn tới danh hiệu anh hùng lần thứ 3 - Kế hoạch",
+        date: "2026-06-12",
+        time: "16:50",
+        desc: "Tài liệu tọa đàm.",
+        link: "sohoa/CHINHTRI/TOADAM/Diễn đàn thanh niên với chủ đề khát vọng thanh niên, đưa Sư đoàn vươn tới danh hiệu anh hùng lần thứ 3/kế hoạch.pdf"
+    },
+    {
+        title: "Diễn đàn thanh niên với chủ đề khát vọng thanh niên, đưa Sư đoàn vươn tới danh hiệu anh hùng lần thứ 3 - Kịch bản",
+        date: "2026-06-12",
+        time: "16:45",
+        desc: "Tài liệu tọa đàm.",
+        link: "sohoa/CHINHTRI/TOADAM/Diễn đàn thanh niên với chủ đề khát vọng thanh niên, đưa Sư đoàn vươn tới danh hiệu anh hùng lần thứ 3/kịch bản.pdf"
+    },
+    {
+        title: "Diễn đàn thanh niên với chủ đề tuổi trẻ Trung đoàn 24 giữ lửa truyền thống, thắp sáng tương lai - Kế hoạch",
+        date: "2026-06-12",
+        time: "16:40",
+        desc: "Tài liệu tọa đàm.",
+        link: "sohoa/CHINHTRI/TOADAM/Diễn đàn thanh niên với chủ đề tuổi trẻ Trung đoàn 24 giữ lửa truyền thống, thắp sáng tương lai/kế hoạch.pdf"
+    },
+    {
+        title: "Diễn đàn thanh niên với chủ đề tuổi trẻ Trung đoàn 24 giữ lửa truyền thống, thắp sáng tương lai - Kịch bản",
+        date: "2026-06-12",
+        time: "16:35",
+        desc: "Tài liệu tọa đàm.",
+        link: "sohoa/CHINHTRI/TOADAM/Diễn đàn thanh niên với chủ đề tuổi trẻ Trung đoàn 24 giữ lửa truyền thống, thắp sáng tương lai/kịch bản.pdf"
+    },
+    {
+        title: "Diễn đàn thanh niên với chủ đề tuổi trẻ Trung đoàn 24, bản lĩnh, khát vọng, xung kích sáng tạo, tiên phong, quyết thắng - Kế hoạch",
+        date: "2026-06-12",
+        time: "16:30",
+        desc: "Tài liệu tọa đàm.",
+        link: "sohoa/CHINHTRI/TOADAM/Diễn đàn thanh niên với chủ đề tuổi trẻ Trung đoàn 24, bản lĩnh, khát vọng, xung kích sáng tạo, tiên phong, quyết thắng/kế hoạch.pdf"
+    },
+    {
+        title: "Diễn đàn thanh niên với chủ đề tuổi trẻ Trung đoàn 24, bản lĩnh, khát vọng, xung kích sáng tạo, tiên phong, quyết thắng - Kịch bản",
+        date: "2026-06-12",
+        time: "16:25",
+        desc: "Tài liệu tọa đàm.",
+        link: "sohoa/CHINHTRI/TOADAM/Diễn đàn thanh niên với chủ đề tuổi trẻ Trung đoàn 24, bản lĩnh, khát vọng, xung kích sáng tạo, tiên phong, quyết thắng/kịch bản.pdf"
     }
 ];
 
