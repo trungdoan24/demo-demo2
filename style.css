@@ -48,9 +48,10 @@ header {
     margin-bottom: 10px;
 }
 
-.navbar {
-    background: #006C2E;
-    border-bottom: 2px solid #00C853;
+.navbar{
+    max-width:1140px;
+    margin:0 auto;
+    background:#006B1F;
 }
 
 .menu {
@@ -954,3 +955,20 @@ a {
 a:visited {
     color: inherit;
 }
+.banner-header{
+    width:100%;
+    max-width:1140px;
+    margin:0 auto;
+    line-height:0;
+}
+
+.banner-header img{
+    width:100%;
+    height:auto;
+    display:block;
+}
+.container{
+    max-width:1140px;
+    margin:20px auto;
+}
+
