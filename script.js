@@ -524,3 +524,118 @@ const quansuDocuments = [
         link: "sohoa/QUANSU/ĐLĐN/ĐỘI NGŨ HỎA KHÍ TRỢ CHIẾN AGS-17, RPG-29.pdf"
     }
 ];
+const hcktDocuments = [
+
+    {
+        title: "Cách nhận biết các yếu tố nguy hiểm, yếu tố có hại tại nơi làm việc",
+        date: "2026-06-20",
+        time: "17:00",
+        desc: "An toàn lao động.",
+        link: "sohoa/HAUCANKYTHUAT/ANTOANLAODONG/CÁCH NHẬN BIẾT CÁC YẾU TỐ NGUY HIỂM, YẾU TỐ CÓ HẠI TẠI NƠI LÀM VIỆC.pdf"
+    },
+
+    {
+        title: "Giới thiệu tóm tắt Luật, Nghị định VSATLĐ",
+        date: "2026-06-20",
+        time: "16:55",
+        desc: "An toàn lao động.",
+        link: "sohoa/HAUCANKYTHUAT/ANTOANLAODONG/GIỚI THIỆU TÓM TẮT LUẬT, NGHỊ ĐỊNH VSATLĐ.pdf"
+    },
+
+    {
+        title: "Luật An toàn, vệ sinh lao động",
+        date: "2026-06-20",
+        time: "16:50",
+        desc: "An toàn lao động.",
+        link: "sohoa/HAUCANKYTHUAT/ANTOANLAODONG/LUẬT AN TOÀN, VỆ SINH LAO ĐỘNG.pdf"
+    },
+
+    {
+        title: "Một số giải pháp cải thiện điều kiện lao động",
+        date: "2026-06-20",
+        time: "16:45",
+        desc: "An toàn lao động.",
+        link: "sohoa/HAUCANKYTHUAT/ANTOANLAODONG/MỘT SỐ GIẢI PHÁP CẢI THIỆN ĐIỀU KIỆN LAO ĐỘNG.pdf"
+    },
+
+    {
+        title: "Nghiệp vụ công tác ATVSLĐ ở cơ sở",
+        date: "2026-06-20",
+        time: "16:40",
+        desc: "An toàn lao động.",
+        link: "sohoa/HAUCANKYTHUAT/ANTOANLAODONG/NGHIỆP VỤ CÔNG TÁC ATVSLĐ Ở CƠ SỞ.pdf"
+    },
+
+    {
+        title: "Nhận biết, đánh giá và quản lý các rủi ro tại nơi làm việc",
+        date: "2026-06-20",
+        time: "16:35",
+        desc: "An toàn lao động.",
+        link: "sohoa/HAUCANKYTHUAT/ANTOANLAODONG/NHẬN BIẾT, ĐÁNH GIÁ VÀ QUẢN LÝ CÁC RỦI RO TẠI NƠI LÀM VIỆC.pdf"
+    },
+
+    {
+        title: "Tiêu chuẩn chế độ hậu cần",
+        date: "2026-06-19",
+        time: "17:00",
+        desc: "Văn bản hậu cần.",
+        link: "sohoa/HAUCANKYTHUAT/VANBANHAUCAN/tiêu chuẩn chế độ hậu cần.pdf"
+    },
+
+    {
+        title: "Công tác quân nhu dã ngoại - SSCĐ",
+        date: "2026-06-19",
+        time: "16:55",
+        desc: "Quân nhu.",
+        link: "sohoa/HAUCANKYTHUAT/VANBANHAUCAN/QUANNHU/Công tác QN dã ngoại-SSCĐ.pdf"
+    },
+
+    {
+        title: "Công tác tăng gia sản xuất Trung đoàn 24 năm 2026",
+        date: "2026-06-19",
+        time: "16:50",
+        desc: "Quân nhu.",
+        link: "sohoa/HAUCANKYTHUAT/VANBANHAUCAN/QUANNHU/Công tác Tăng gia sản xuất e24 năm 2026.pdf"
+    },
+
+    {
+        title: "Một số rau dại ăn được ở Việt Nam",
+        date: "2026-06-19",
+        time: "16:45",
+        desc: "Quân nhu.",
+        link: "sohoa/HAUCANKYTHUAT/VANBANHAUCAN/QUANNHU/Mot so rau dai an duoc o Viet Nam.pdf"
+    },
+
+    {
+        title: "Các bước thực hiện ngày kỹ thuật",
+        date: "2026-06-18",
+        time: "17:00",
+        desc: "Văn bản kỹ thuật.",
+        link: "sohoa/HAUCANKYTHUAT/VANBANKYTHUAT/Các bước thực hiện ngày kỹ thuật.pdf"
+    },
+
+    {
+        title: "Hướng dẫn nội dung bảo quản vũ khí bộ binh ngày, tuần",
+        date: "2026-06-18",
+        time: "16:55",
+        desc: "Văn bản kỹ thuật.",
+        link: "sohoa/HAUCANKYTHUAT/VANBANKYTHUAT/HDND BQVKBB ngày, tuần.pdf"
+    },
+
+    {
+        title: "Hướng dẫn sắp xếp tủ súng K22",
+        date: "2026-06-18",
+        time: "16:50",
+        desc: "Văn bản kỹ thuật.",
+        link: "sohoa/HAUCANKYTHUAT/VANBANKYTHUAT/Hướng dẫn sắp xếp tủ súng K22.pdf"
+    },
+
+    {
+        title: "Tổ chức ngày kỹ thuật theo 1164",
+        date: "2026-06-18",
+        time: "16:45",
+        desc: "Văn bản kỹ thuật.",
+        link: "sohoa/HAUCANKYTHUAT/VANBANKYTHUAT/TO CHUC NGAY KT theo 1164.pdf"
+    }
+
+];
