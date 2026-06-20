@@ -494,3 +494,33 @@ if (documentList && pagination) {
 
     renderPagination();
 }
+const quansuDocuments = [
+    {
+        title: "ĐLĐN - Tập bài giảng, tập 1, XB 2014",
+        date: "2026-06-20",
+        time: "17:00",
+        desc: "Tài liệu điều lệnh đội ngũ.",
+        link: "sohoa/QUANSU/ĐLĐN/ĐLĐN (TẬP BÀI GIẢNG-TẬP 1) XB 2014.pdf"
+    },
+    {
+        title: "ĐLĐN - Đơn vị",
+        date: "2026-06-20",
+        time: "16:55",
+        desc: "Tài liệu điều lệnh đội ngũ.",
+        link: "sohoa/QUANSU/ĐLĐN/ĐLĐN- ĐƠN VỊ.pdf"
+    },
+    {
+        title: "ĐLĐN - TNCS STV380, STV 215",
+        date: "2026-06-20",
+        time: "16:50",
+        desc: "Tài liệu điều lệnh đội ngũ.",
+        link: "sohoa/QUANSU/ĐLĐN/ĐLĐN-TNCS STV380, STV 215.pdf"
+    },
+    {
+        title: "Đội ngũ hỏa khí trợ chiến AGS-17, RPG-29",
+        date: "2026-06-20",
+        time: "16:45",
+        desc: "Tài liệu điều lệnh đội ngũ.",
+        link: "sohoa/QUANSU/ĐLĐN/ĐỘI NGŨ HỎA KHÍ TRỢ CHIẾN AGS-17, RPG-29.pdf"
+    }
+];
