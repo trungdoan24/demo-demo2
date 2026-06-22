@@ -12,7 +12,7 @@ body {
 header {
     background: linear-gradient(135deg, #008C2F, #00C853);
     color: #fff;
-    padding: none;
+    padding: 0;
     text-align: center;
     border-bottom: 3px solid #FFD600;
 }
@@ -472,4 +472,902 @@ a:visited {
     background: #008C2F;
     color: #fff;
     border-color: #008C2F;
+}
+
+/* =============================== */
+/* TRANG CHỦ GIỐNG BQP */
+/* =============================== */
+
+.home-bqp-layout {
+    max-width: 1140px;
+    margin: 18px auto 25px auto;
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 30px;
+}
+
+.home-main-news {
+    background: #fff;
+}
+
+.home-date {
+    font-size: 16px;
+    color: #444;
+    margin-bottom: 28px;
+}
+
+.home-right {
+    background: #fff;
+}
+
+.home-search {
+    display: flex;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.home-search input {
+    flex: 1;
+    height: 34px;
+    border: 1px solid #aaa;
+    padding: 0 10px;
+    font-size: 14px;
+    outline: none;
+}
+
+.home-search button {
+    width: 38px;
+    height: 34px;
+    border: none;
+    background: #008C2F;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.home-search button:hover {
+    background: #006B1F;
+}
+
+.home-banner-box {
+    margin-bottom: 22px;
+}
+
+.home-banner-box img {
+    width: 100%;
+    display: block;
+    border: none;
+}
+
+.home-highlight h2 {
+    color: #008C2F;
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-bottom: 2px solid #d6d6d6;
+    padding-bottom: 8px;
+    margin-bottom: 0;
+}
+
+.home-highlight-list {
+    background: #f3f3f3;
+    padding: 14px 16px;
+}
+
+.home-highlight-item {
+    border-bottom: 1px dotted #bbb;
+    padding: 10px 0;
+    position: relative;
+    padding-left: 14px;
+}
+
+.home-highlight-item::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 18px;
+    width: 5px;
+    height: 5px;
+    background: #008C2F;
+}
+
+.home-highlight-item:last-child {
+    border-bottom: none;
+}
+
+.home-highlight-item a {
+    color: #333;
+    font-size: 15px;
+    line-height: 1.4;
+    text-decoration: none;
+}
+
+.home-highlight-item a:hover {
+    color: #008C2F;
+}
+
+.home-doc-empty {
+    padding: 15px 0;
+    color: #777;
+}
+
+@media screen and (max-width: 900px) {
+    .home-bqp-layout {
+        grid-template-columns: 1fr;
+        width: 94%;
+    }
+
+    .home-right {
+        order: 2;
+    }
+}
+
+.home-date {
+    margin-bottom: 25px;
+}
+
+/* ================================================= */
+/* RESPONSIVE TOÀN BỘ WEBSITE */
+/* Điện thoại - Tablet - Laptop - PC - TV */
+/* ================================================= */
+
+/* MẶC ĐỊNH: LAPTOP / PC */
+body {
+    font-size: 16px;
+}
+
+.banner-header,
+.navbar,
+.container,
+.page-layout,
+.home-bqp-layout {
+    width: 100%;
+    max-width: 1140px;
+}
+
+/* Ảnh banner luôn co theo màn hình */
+.banner-header img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Menu không bị tràn */
+.menu {
+    flex-wrap: wrap;
+}
+
+.menu>li>a {
+    white-space: nowrap;
+}
+
+/* Nội dung văn bản không bị tràn */
+.news-item-bqp h3,
+.home-highlight-item a,
+.right-category li a {
+    word-break: break-word;
+    overflow-wrap: anywhere;
+}
+
+/* ================================================= */
+/* TV / MÀN HÌNH RẤT LỚN: từ 1600px trở lên */
+/* ================================================= */
+
+@media screen and (min-width: 1600px) {
+
+    .banner-header,
+    .navbar,
+    .container,
+    .page-layout,
+    .home-bqp-layout {
+        max-width: 1320px;
+    }
+
+    body {
+        font-size: 18px;
+    }
+
+    .news-item-bqp h3 {
+        font-size: 22px;
+    }
+
+    .section-title-bqp h2 {
+        font-size: 28px;
+    }
+
+    .right-category {
+        width: 320px;
+    }
+
+    .page-layout,
+    .home-bqp-layout {
+        grid-template-columns: 1fr 320px;
+        gap: 36px;
+    }
+}
+
+/* ================================================= */
+/* PC / LAPTOP LỚN: 1200px - 1599px */
+/* ================================================= */
+
+@media screen and (max-width: 1599px) {
+
+    .banner-header,
+    .navbar,
+    .container,
+    .page-layout,
+    .home-bqp-layout {
+        max-width: 1140px;
+    }
+}
+
+/* ================================================= */
+/* LAPTOP NHỎ / TABLET NGANG: 992px - 1199px */
+/* ================================================= */
+
+@media screen and (max-width: 1199px) {
+
+    .banner-header,
+    .navbar,
+    .container,
+    .page-layout,
+    .home-bqp-layout {
+        width: 94%;
+        max-width: 100%;
+    }
+
+    .page-layout,
+    .home-bqp-layout {
+        grid-template-columns: 1fr 260px;
+        gap: 24px;
+    }
+
+    .menu>li>a {
+        padding: 13px 14px;
+        font-size: 13px;
+    }
+
+    .section-title-bqp h2 {
+        font-size: 23px;
+    }
+
+    .news-item-bqp h3 {
+        font-size: 19px;
+    }
+}
+
+/* ================================================= */
+/* TABLET DỌC: 768px - 991px */
+/* ================================================= */
+
+@media screen and (max-width: 991px) {
+
+    .page-layout,
+    .home-bqp-layout {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        width: 94%;
+    }
+
+    .right-category,
+    .home-right {
+        width: 100%;
+        order: 2;
+    }
+
+    .main-news,
+    .home-main-news {
+        width: 100%;
+        order: 1;
+    }
+
+    .container {
+        width: 94%;
+        flex-direction: column;
+    }
+
+    aside {
+        width: 100%;
+    }
+
+    .menu {
+        justify-content: center;
+    }
+
+    .menu>li>a {
+        padding: 12px 12px;
+        font-size: 13px;
+    }
+
+    .home-search {
+        max-width: 100%;
+    }
+
+    .home-banner-box img {
+        max-height: 220px;
+        object-fit: cover;
+    }
+}
+
+/* ================================================= */
+/* ĐIỆN THOẠI LỚN: 576px - 767px */
+/* ================================================= */
+
+@media screen and (max-width: 767px) {
+
+    body {
+        font-size: 15px;
+    }
+
+    .banner-header,
+    .navbar,
+    .container,
+    .page-layout,
+    .home-bqp-layout {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .banner-header img {
+        width: 100%;
+        height: auto;
+    }
+
+    .navbar {
+        width: 100%;
+    }
+
+    .hamburger {
+        display: flex;
+        background: #006B1F;
+    }
+
+    .menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: #006B1F;
+    }
+
+    .menu.active {
+        display: flex;
+    }
+
+    .menu>li {
+        width: 100%;
+    }
+
+    .menu>li>a {
+        width: 100%;
+        padding: 14px 18px;
+        font-size: 14px;
+        border-bottom: 1px solid rgba(255, 255, 255, .15);
+    }
+
+    .menu>li:not(:last-child)::after {
+        display: none;
+    }
+
+    .page-layout,
+    .home-bqp-layout {
+        padding: 0 14px;
+        margin-top: 18px;
+    }
+
+    .breadcrumb {
+        font-size: 13px;
+        margin-bottom: 20px;
+    }
+
+    .section-title-bqp {
+        margin-bottom: 18px;
+    }
+
+    .section-title-bqp h2 {
+        font-size: 22px;
+    }
+
+    .news-item-bqp {
+        margin-bottom: 16px;
+        padding-bottom: 16px;
+    }
+
+    .news-item-bqp h3 {
+        font-size: 18px;
+        line-height: 1.35;
+    }
+
+    .news-item-bqp p {
+        font-size: 13px;
+    }
+
+    .news-item-bqp span {
+        font-size: 15px;
+    }
+
+    .right-category h2 {
+        font-size: 18px;
+    }
+
+    .right-category li a {
+        padding: 15px 14px 15px 24px;
+        font-size: 13px;
+    }
+
+    .home-date {
+        font-size: 14px;
+        margin-bottom: 18px;
+    }
+
+    .home-search input {
+        height: 38px;
+        font-size: 14px;
+    }
+
+    .home-search button {
+        height: 38px;
+        width: 42px;
+    }
+
+    .pagination {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    footer {
+        font-size: 14px;
+        padding: 15px 10px;
+    }
+}
+
+/* ================================================= */
+/* ĐIỆN THOẠI NHỎ: dưới 575px */
+/* ================================================= */
+
+@media screen and (max-width: 575px) {
+
+    body {
+        font-size: 14px;
+    }
+
+    .page-layout,
+    .home-bqp-layout,
+    .container {
+        padding: 0 10px;
+        margin-top: 14px;
+    }
+
+    .section-title-bqp h2 {
+        font-size: 20px;
+    }
+
+    .news-item-bqp h3 {
+        font-size: 17px;
+    }
+
+    .news-item-bqp p {
+        font-size: 13px;
+    }
+
+    .news-item-bqp span {
+        font-size: 14px;
+    }
+
+    .right-category {
+        border-radius: 0;
+    }
+
+    .right-category h2 {
+        font-size: 17px;
+        padding: 13px 14px;
+    }
+
+    .right-category li a {
+        font-size: 13px;
+        padding: 14px 12px 14px 24px;
+    }
+
+    .home-highlight h2 {
+        font-size: 20px;
+    }
+
+    .home-highlight-list {
+        padding: 10px 12px;
+    }
+
+    .home-highlight-item a {
+        font-size: 14px;
+    }
+
+    .pagination button {
+        min-width: 34px;
+        height: 34px;
+        font-size: 13px;
+    }
+
+    .menu>li>a {
+        font-size: 13px;
+        padding: 13px 16px;
+    }
+
+    aside {
+        padding: 16px;
+    }
+
+    aside h2 {
+        font-size: 20px;
+    }
+}
+
+/* ================================================= */
+/* ĐIỆN THOẠI RẤT NHỎ: dưới 400px */
+/* ================================================= */
+
+@media screen and (max-width: 400px) {
+
+    .section-title-bqp h2 {
+        font-size: 18px;
+    }
+
+    .news-item-bqp h3 {
+        font-size: 16px;
+    }
+
+    .home-search input {
+        font-size: 13px;
+    }
+
+    .home-search button {
+        width: 38px;
+    }
+
+    .pagination button {
+        min-width: 32px;
+        height: 32px;
+    }
+}
+
+/* ===== MOBILE GIỐNG BQP ===== */
+
+.mobile-bqp-bar {
+    display: none;
+}
+
+.mobile-menu-overlay {
+    display: none;
+}
+
+.mobile-category-panel {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+
+    .banner-header {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .banner-header img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .navbar {
+        display: none;
+    }
+
+    .mobile-bqp-bar {
+        display: flex;
+        align-items: center;
+        height: 34px;
+        background: #fff;
+        border-bottom: 1px solid #ddd;
+        padding: 0 10px;
+        gap: 10px;
+        font-size: 14px;
+        max-width: 1140px;
+        margin: 0 auto;
+    }
+
+    .mobile-menu-btn,
+    .mobile-search-btn {
+        border: none;
+        background: transparent;
+        cursor: pointer;
+        font-size: 18px;
+        padding: 4px;
+    }
+
+    .mobile-menu-btn {
+        color: #008C2F;
+    }
+
+    .mobile-search-btn {
+        color: #777;
+        margin-left: auto;
+    }
+
+    .mobile-date {
+        color: #333;
+        font-size: 14px;
+        white-space: nowrap;
+    }
+
+    .mobile-lang {
+        font-size: 11px;
+        color: #008C2F;
+        border: 1px solid #bbb;
+        padding: 1px 3px;
+        border-radius: 2px;
+    }
+
+    .mobile-menu-overlay {
+        display: block;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, .35);
+        opacity: 0;
+        visibility: hidden;
+        z-index: 9998;
+        transition: .25s;
+    }
+
+    /* Không dùng nền xám khi mở chuyên mục */
+    .mobile-menu-overlay.show {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    /* Panel chuyên mục mobile giống BQP */
+    .mobile-category-panel {
+        display: block;
+        position: fixed;
+        top: 68px;
+        left: -100%;
+        width: 100%;
+        max-width: 100%;
+        height: calc(100vh - 68px);
+        background: #fff;
+        z-index: 9999;
+        box-shadow: none;
+        transition: .25s;
+        overflow-y: auto;
+        border-top: 1px solid #ddd;
+    }
+
+    .mobile-category-panel.show {
+        left: 0;
+    }
+
+    .mobile-category-header {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 42px;
+        padding: 0 14px;
+        border-bottom: 1px solid #ddd;
+        background: #fff;
+    }
+
+    .mobile-category-header h3 {
+        margin: 0;
+        font-size: 15px;
+        color: #333;
+        font-weight: 700;
+    }
+
+    .close-category-btn {
+        position: absolute;
+        right: 10px;
+        top: 8px;
+        border: none;
+        background: transparent;
+        font-size: 20px;
+        color: #777;
+        cursor: pointer;
+    }
+
+
+
+    .mobile-category-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .mobile-category-list li {
+        border-bottom: 1px solid #e5e5e5;
+    }
+
+    .mobile-category-list li a {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 14px;
+        color: #333;
+        text-decoration: none;
+        font-size: 13px;
+        line-height: 1.4;
+    }
+
+    .mobile-category-list li a::after {
+        content: "›";
+        color: #999;
+        font-size: 20px;
+    }
+
+    .mobile-category-list li a:hover {
+        background: #f3f3f3;
+        color: #008C2F;
+    }
+}
+
+/* Ẩn ngày tháng phụ ở trang chủ trên điện thoại */
+@media screen and (max-width: 768px) {
+    .home-date {
+        display: none;
+    }
+
+    .home-bqp-layout {
+        margin-top: 10px;
+    }
+}
+
+/* ===== SỬA MOBILE MENU GIỐNG BQP HƠN ===== */
+@media screen and (max-width: 768px) {
+
+    /* Đổi màu nút menu ☰ */
+    .mobile-menu-btn {
+        color: #0b3d28 !important;
+    }
+
+    /* Đưa khung Chuyên mục xuống dưới thanh menu ngoài */
+    .mobile-category-panel {
+        top: 88px !important;
+        left: -100% !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        height: calc(100vh - 88px) !important;
+        box-shadow: none !important;
+        border-top: 1px solid #702d2d;
+        background: #f3f3f3 !important;
+    }
+
+    .mobile-category-panel.show {
+        left: 0 !important;
+    }
+
+    /* Không hiện nền xám phủ lên nội dung */
+    .mobile-menu-overlay {
+        display: none !important;
+    }
+
+    /* Dòng tiêu đề Chuyên mục */
+    .mobile-category-header {
+        height: 38px !important;
+        background: #f3f3f3 !important;
+        border-bottom: 1px solid #ddd;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+
+    .mobile-category-header h3 {
+        font-size: 14px !important;
+        font-weight: 700;
+        color: #333;
+    }
+
+    .close-category-btn {
+        position: absolute;
+        right: 10px;
+        top: 7px;
+        font-size: 20px;
+        color: #777;
+    }
+
+    /* Danh sách chuyên mục */
+    .mobile-category-list li a {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 14px;
+        font-size: 13px;
+        color: #333;
+        border-bottom: 1px solid #e5e5e5;
+    }
+
+    /* Mũi tên mặc định */
+    .mobile-category-list li a::after {
+        content: "›";
+        color: #999;
+        font-size: 18px;
+    }
+
+    /* Xóa mũi tên của Trang chủ */
+    .mobile-category-list li:first-child a::after {
+        content: "";
+    }
+}
+
+/* ===== MÀU KHUNG CHUYÊN MỤC MOBILE GIỐNG BQP ===== */
+@media screen and (max-width: 768px) {
+
+    /* Nền tổng khung chuyên mục */
+    .mobile-category-panel {
+        background: #f4f4f4 !important;
+    }
+
+    /* Thanh tiêu đề Chuyên mục */
+    .mobile-category-header {
+        background: #f4f4f4 !important;
+        border-bottom: 1px solid #dcdcdc !important;
+    }
+
+    .mobile-category-header h3 {
+        color: #333 !important;
+    }
+
+    /* Từng dòng chuyên mục */
+    .mobile-category-list li {
+        background: #f4f4f4 !important;
+        border-bottom: 1px solid #dddddd !important;
+    }
+
+    .mobile-category-list li a {
+        background: #f4f4f4 !important;
+        color: #333 !important;
+    }
+
+    .mobile-category-list li a:hover {
+        background: #e9e9e9 !important;
+        color: #008C2F !important;
+    }
+}
+
+/* ===== SỬA LỖI KHÔNG KÉO XUỐNG DƯỚI CÙNG TRÊN MOBILE ===== */
+html,
+body {
+    height: auto !important;
+    min-height: 100% !important;
+    overflow-y: auto !important;
+}
+
+@media screen and (max-width: 768px) {
+
+    body {
+        padding-bottom: 40px;
+    }
+
+    .home-bqp-layout {
+        display: block !important;
+        height: auto !important;
+        min-height: auto !important;
+        overflow: visible !important;
+        padding-bottom: 30px;
+    }
+
+    .home-main-news,
+    .home-right,
+    .home-highlight,
+    .home-highlight-list {
+        height: auto !important;
+        max-height: none !important;
+        overflow: visible !important;
+    }
+
+    .home-right {
+        display: block !important;
+        margin-top: 20px;
+        padding-bottom: 30px;
+    }
+
+    footer {
+        display: block !important;
+        margin-top: 20px;
+    }
 }

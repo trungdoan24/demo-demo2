@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Hậu cần kỹ thuật - Trung đoàn 24</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
@@ -15,6 +16,11 @@
     </header>
 
     <nav class="navbar">
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
         <ul class="menu">
             <li><a href="index.html"><i class="fas fa-home"></i></a></li>
             <li><a href="quansu.html">QUÂN SỰ</a></li>
@@ -36,8 +42,9 @@
                 <h2>HẬU CẦN KỸ THUẬT</h2>
             </div>
 
-            <div id="hcktList"></div>
-            <div class="pagination" id="hcktPagination"></div>
+            <div id="documentList"></div>
+
+            <div class="pagination" id="document-pagination"></div>
 
         </main>
 
@@ -58,6 +65,9 @@
     <footer>
         © 2026 CỔNG THÔNG TIN NỘI BỘ
     </footer>
+    <script>
+        window.DOCUMENT_FOLDER = "sohoa/HAUCANKYTHUAT/";
+    </script>
     <script src="script.js"></script>
 </body>
 
