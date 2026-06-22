@@ -639,3 +639,67 @@ const hcktDocuments = [
     }
 
 ];
+function renderDocumentPage(data, listId, paginationId) {
+    const list = document.getElementById(listId);
+    const pagination = document.getElementById(paginationId);
+
+    if (!list || !pagination) return;
+
+    const perPage = 10;
+    let currentPage = 1;
+
+    data.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+    function formatDate(date) {
+        return new Date(date).toLocaleDateString("vi-VN");
+    }
+
+    function render() {
+        const start = (currentPage - 1) * perPage;
+        const pageItems = data.slice(start, start + perPage);
+
+        list.innerHTML = pageItems.map(item => `
+            <div class="news-item-bqp">
+                <h3>
+                    <a href="${item.link}" target="_blank">
+                        ${item.title}
+                    </a>
+                </h3>
+                <p>${item.time} | ${formatDate(item.date)}</p>
+                <span>${item.desc}</span>
+            </div>
+        `).join("");
+    }
+
+    function renderPagination() {
+        const totalPages = Math.ceil(data.length / perPage);
+        let html = "";
+
+        html += `<button onclick="${listId}ChangePage(${Math.max(1, currentPage - 1)})">&lt;&lt;</button>`;
+
+        for (let i = 1; i <= totalPages; i++) {
+            html += `
+                <button class="${i === currentPage ? "active" : ""}"
+                        onclick="${listId}ChangePage(${i})">
+                    ${i}
+                </button>
+            `;
+        }
+
+        html += `<button onclick="${listId}ChangePage(${Math.min(totalPages, currentPage + 1)})">&gt;&gt;</button>`;
+
+        pagination.innerHTML = html;
+    }
+
+    window[listId + "ChangePage"] = function (page) {
+        currentPage = page;
+        render();
+        renderPagination();
+    };
+
+    render();
+    renderPagination();
+}
+
+renderDocumentPage(quansuDocuments, "quansuList", "quansuPagination");
+renderDocumentPage(hcktDocuments, "hcktList", "hcktPagination");
