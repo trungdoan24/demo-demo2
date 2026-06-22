@@ -9,18 +9,28 @@ powershell -ExecutionPolicy Bypass -File .\update-docs.ps1
 
 echo.
 echo ================================
-echo DANG KIEM TRA GIT
+echo DANG THEM FILE VAO GIT
 echo ================================
 
 git add .
 
-git commit -m "Update documents"
+git diff --cached --quiet
+if %errorlevel%==0 (
+    echo Khong co thay doi moi de commit.
+) else (
+    git commit -m "Update documents"
+)
+
+echo.
+echo ================================
+echo DANG DAY LEN GITHUB
+echo ================================
 
 git push origin main
 
 echo.
 echo ================================
-echo DA CAP NHAT XONG
+echo HOAN TAT
 echo ================================
 
 pause
