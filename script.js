@@ -466,3 +466,190 @@ if (openCategoryMenu && closeCategoryMenu && mobileCategoryPanel && mobileMenuOv
 
     mobileMenuOverlay.addEventListener("click", closeMobileMenu);
 }
+/* ===== MENU MOBILE 2 CẤP GIỐNG BQP ===== */
+document.addEventListener("DOMContentLoaded", function () {
+    createBqpMobileMenu();
+});
+
+function createBqpMobileMenu() {
+    const header = document.querySelector(".banner-header");
+    if (!header) return;
+
+    /* Xóa menu mobile cũ nếu đã có */
+    document.querySelectorAll(".mobile-bqp-bar, .mobile-menu-overlay, .mobile-category-panel").forEach(el => el.remove());
+
+    const now = new Date();
+    const weekdays = ["Chủ nhật", "Thứ Hai", "Thứ Ba", "Thứ Tư", "Thứ Năm", "Thứ Sáu", "Thứ Bảy"];
+    const mobileDateText = `${weekdays[now.getDay()]}, ${now.getDate()}/${now.getMonth() + 1}/${now.getFullYear()}`;
+
+    const menuHTML = `
+        <div class="mobile-bqp-bar">
+            <button class="mobile-menu-btn" id="openCategoryMenu" type="button">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <span class="mobile-date" id="mobileDate">${mobileDateText}</span>
+
+            <button class="mobile-search-btn" type="button">
+                <i class="fas fa-search"></i>
+            </button>
+
+            <span class="mobile-lang">EN</span>
+        </div>
+
+        <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+
+        <div class="mobile-category-panel" id="mobileCategoryPanel">
+
+            <div class="mobile-category-header">
+                <button class="mobile-back-btn" id="mobileBackBtn" type="button">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+
+                <h3 id="mobileMenuTitle">Chuyên mục</h3>
+
+                <button class="close-category-btn" id="closeCategoryMenu" type="button">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <div class="mobile-menu-level active" id="mobileLevel1">
+                <ul class="mobile-category-list">
+                    <li>
+                        <a href="index.html" class="no-arrow">Trang chủ</a>
+                    </li>
+
+                    <li>
+                        <button class="mobile-parent" data-target="menu-quansu" type="button">
+                            <span>Quân sự</span>
+                            <em>1</em>
+                        </button>
+                    </li>
+
+                    <li>
+                        <button class="mobile-parent" data-target="menu-chinhtri" type="button">
+                            <span>Chính trị</span>
+                            <em>8</em>
+                        </button>
+                    </li>
+
+                    <li>
+                        <button class="mobile-parent" data-target="menu-haucankythuat" type="button">
+                            <span>Hậu cần kỹ thuật</span>
+                            <em>4</em>
+                        </button>
+                    </li>
+
+                    <li>
+                        <button class="mobile-parent" data-target="menu-chuyendoiso" type="button">
+                            <span>Chuyển đổi số</span>
+                            <em>1</em>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="mobile-menu-level" id="menu-quansu" data-title="Quân sự">
+                <ul class="mobile-category-list">
+                    <li><a href="quansu.html">Tất cả văn bản Quân sự</a></li>
+                    <li><a href="dldn.html">Điều lệnh đội ngũ</a></li>
+                </ul>
+            </div>
+
+            <div class="mobile-menu-level" id="menu-chinhtri" data-title="Chính trị">
+                <ul class="mobile-category-list">
+                    <li><a href="chinhtri.html">Tất cả văn bản Chính trị</a></li>
+                    <li><a href="chuyende.html">Chuyên đề</a></li>
+                    <li><a href="toadam.html">Tọa đàm</a></li>
+                    <li><a href="luat.html">Luật</a></li>
+                    <li><a href="thongtu.html">Thông tư</a></li>
+                    <li><a href="nghidinh.html">Nghị định</a></li>
+                    <li><a href="maukekhai.html">Mẫu kê khai</a></li>
+                    <li><a href="giaoanhsqbs.html">Giáo án HSQ, BS</a></li>
+                    <li><a href="tailieugiaoduc.html">Tài liệu giáo dục</a></li>
+                </ul>
+            </div>
+
+            <div class="mobile-menu-level" id="menu-haucankythuat" data-title="Hậu cần kỹ thuật">
+                <ul class="mobile-category-list">
+                    <li><a href="haucankythuat.html">Tất cả văn bản Hậu cần kỹ thuật</a></li>
+                    <li><a href="antoanlaodong.html">An toàn lao động</a></li>
+                    <li><a href="vanbanhaucan.html">Văn bản hậu cần</a></li>
+                    <li><a href="quannhu.html">Quân nhu</a></li>
+                    <li><a href="vanbankythuat.html">Văn bản kỹ thuật</a></li>
+                </ul>
+            </div>
+
+            <div class="mobile-menu-level" id="menu-chuyendoiso" data-title="Chuyển đổi số">
+                <ul class="mobile-category-list">
+                    <li><a href="chuyendoiso.html">Tất cả văn bản Chuyển đổi số</a></li>
+                </ul>
+            </div>
+
+        </div>
+    `;
+
+    header.insertAdjacentHTML("afterend", menuHTML);
+
+    const openBtn = document.getElementById("openCategoryMenu");
+    const closeBtn = document.getElementById("closeCategoryMenu");
+    const panel = document.getElementById("mobileCategoryPanel");
+    const overlay = document.getElementById("mobileMenuOverlay");
+    const backBtn = document.getElementById("mobileBackBtn");
+    const title = document.getElementById("mobileMenuTitle");
+    const level1 = document.getElementById("mobileLevel1");
+
+    function openMenu() {
+        panel.classList.add("show");
+        overlay.classList.add("show");
+    }
+
+    function closeMenu() {
+        panel.classList.remove("show");
+        overlay.classList.remove("show");
+        showLevel1();
+    }
+
+    function showLevel1() {
+        document.querySelectorAll(".mobile-menu-level").forEach(level => {
+            level.classList.remove("active");
+        });
+
+        level1.classList.add("active");
+        title.textContent = "Chuyên mục";
+        backBtn.style.display = "none";
+    }
+
+    function showSubMenu(targetId) {
+        const target = document.getElementById(targetId);
+        if (!target) return;
+
+        document.querySelectorAll(".mobile-menu-level").forEach(level => {
+            level.classList.remove("active");
+        });
+
+        target.classList.add("active");
+        title.textContent = target.dataset.title || "Chuyên mục";
+        backBtn.style.display = "block";
+    }
+
+    openBtn.addEventListener("click", function () {
+        if (panel.classList.contains("show")) {
+            closeMenu();
+        } else {
+            openMenu();
+        }
+    });
+
+    closeBtn.addEventListener("click", closeMenu);
+    overlay.addEventListener("click", closeMenu);
+    backBtn.addEventListener("click", showLevel1);
+
+    document.querySelectorAll(".mobile-parent").forEach(btn => {
+        btn.addEventListener("click", function () {
+            showSubMenu(this.dataset.target);
+        });
+    });
+
+    showLevel1();
+}
