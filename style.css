@@ -1859,3 +1859,143 @@ body {
     font-weight: 900 !important;
     line-height: 1.45 !important;
 }
+
+/* ===== THANH TÌM KIẾM DÙNG CHUNG CHO CÁC TRANG HTML ===== */
+.global-search-box {
+    display: flex;
+    width: 100%;
+    margin-bottom: 16px;
+    padding: 0;
+}
+
+.global-search-box input {
+    flex: 1;
+    height: 34px;
+    border: 1px solid #aaa;
+    border-right: none;
+    padding: 0 10px;
+    font-size: 14px;
+    outline: none;
+    background: #fff;
+    box-sizing: border-box;
+}
+
+.global-search-box button {
+    width: 38px;
+    height: 34px;
+    border: none;
+    background: #008C2F;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.global-search-box button:hover {
+    background: #006B1F;
+}
+
+/* Khi thanh tìm kiếm nằm trong cột phải */
+.right-category .global-search-box {
+    padding: 12px;
+    margin-bottom: 0;
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Trên mobile ẩn search desktop, dùng nút kính lúp mobile */
+@media screen and (max-width: 768px) {
+    .global-search-box {
+        display: none !important;
+    }
+}
+
+/* ===== CỘT PHẢI: THANH TÌM KIẾM TRÊN RIGHT-CATEGORY ===== */
+
+.right-column {
+    width: 280px;
+    align-self: start;
+}
+
+.right-column .right-category {
+    width: 100%;
+}
+
+/* Ô tìm kiếm */
+.global-search-box {
+    display: flex;
+    width: 100%;
+    margin-bottom: 16px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .08);
+    box-sizing: border-box;
+}
+
+.global-search-box input {
+    flex: 1;
+    height: 34px;
+    border: 1px solid #aaa;
+    border-right: none;
+    padding: 0 10px;
+    font-size: 14px;
+    outline: none;
+    background: #fff;
+    box-sizing: border-box;
+}
+
+.global-search-box button {
+    width: 38px;
+    min-width: 38px;
+    height: 34px;
+    border: none;
+    background: #008C2F;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.global-search-box button:hover {
+    background: #006B1F;
+}
+
+/* Bố cục trang chuyên mục có cột phải mới */
+@media screen and (min-width: 769px) {
+
+    .page-layout {
+        display: grid;
+        grid-template-columns: 1fr 280px;
+        gap: 30px;
+        align-items: start;
+    }
+
+    .page-layout>.main-news {
+        grid-column: 1;
+    }
+
+    .page-layout>.right-column {
+        grid-column: 2;
+    }
+}
+
+/* Màn hình lớn */
+@media screen and (min-width: 1600px) {
+    .right-column {
+        width: 320px;
+    }
+
+    .page-layout {
+        grid-template-columns: 1fr 320px;
+    }
+}
+
+/* Mobile dùng nút kính lúp trên thanh mobile, nên ẩn cột phải */
+@media screen and (max-width: 768px) {
+    .right-column {
+        display: none !important;
+    }
+
+    .global-search-box {
+        display: none !important;
+    }
+}

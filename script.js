@@ -681,3 +681,76 @@ function setupMobileSearch() {
         }
     });
 }
+/* ===== THANH TÌM KIẾM NẰM TRÊN RIGHT-CATEGORY CHO TẤT CẢ TRANG HTML ===== */
+document.addEventListener("DOMContentLoaded", function () {
+    createGlobalSearchBox();
+});
+
+function createGlobalSearchBox() {
+    /*
+        Trang chủ index.html đã có ô tìm kiếm riêng,
+        nên không tạo thêm để tránh bị lặp.
+    */
+    if (document.getElementById("homeSearchInput")) return;
+
+    /*
+        Nếu đã có ô tìm kiếm chung thì không tạo lặp.
+    */
+    if (document.getElementById("globalSearchInput")) return;
+
+    const rightCategory = document.querySelector(".right-category");
+    const navbar = document.querySelector(".navbar");
+
+    const searchHTML = `
+        <div class="global-search-box">
+            <input type="text" id="globalSearchInput" placeholder="Tìm kiếm nội dung...">
+            <button type="button" id="globalSearchBtn">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+    `;
+
+    /*
+        Nếu trang có right-category thì tạo cột phải riêng:
+        search nằm trên, right-category nằm dưới.
+    */
+    if (rightCategory) {
+        const rightColumn = document.createElement("aside");
+        rightColumn.className = "right-column";
+
+        rightCategory.parentNode.insertBefore(rightColumn, rightCategory);
+
+        rightColumn.innerHTML = searchHTML;
+        rightColumn.appendChild(rightCategory);
+    }
+
+    /*
+        Nếu trang không có right-category thì đặt dưới navbar.
+    */
+    else if (navbar) {
+        navbar.insertAdjacentHTML("afterend", searchHTML);
+    }
+
+    else {
+        document.body.insertAdjacentHTML("afterbegin", searchHTML);
+    }
+
+    const globalSearchInput = document.getElementById("globalSearchInput");
+    const globalSearchBtn = document.getElementById("globalSearchBtn");
+
+    function doGlobalSearch() {
+        const keyword = globalSearchInput.value.trim();
+
+        if (!keyword) return;
+
+        window.location.href = "index.html?q=" + encodeURIComponent(keyword);
+    }
+
+    globalSearchBtn.addEventListener("click", doGlobalSearch);
+
+    globalSearchInput.addEventListener("keydown", function (e) {
+        if (e.key === "Enter") {
+            doGlobalSearch();
+        }
+    });
+}
