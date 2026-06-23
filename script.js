@@ -209,11 +209,15 @@ function renderDocumentsFromJson() {
 renderDocumentsFromJson();
 // ===== TRANG CHỦ: HIỂN THỊ TẤT CẢ VĂN BẢN TỪ DOCUMENTS.JSON =====
 function removeVietnameseTones(str) {
-    return str
+    return (str || "")
+        .toString()
         .normalize("NFD")
         .replace(/[\u0300-\u036f]/g, "")
         .replace(/đ/g, "d")
         .replace(/Đ/g, "D")
+        .replace(/[^\w\s/.-]/g, " ")
+        .replace(/\s+/g, " ")
+        .trim()
         .toLowerCase();
 }
 function renderHomePageDocuments() {
@@ -357,9 +361,7 @@ function renderHomePageDocuments() {
             }
 
             function searchDocs() {
-                const keyword = searchInput
-                    ? searchInput.value.trim()
-                    : "";
+                const keyword = searchInput ? searchInput.value.trim() : "";
 
                 if (!keyword) {
                     filteredDocs = [...docs];
@@ -368,9 +370,14 @@ function renderHomePageDocuments() {
 
                     filteredDocs = docs.filter(doc => {
                         const title = removeVietnameseTones(doc.title || "");
+                        const category = removeVietnameseTones(doc.category || "");
                         const link = removeVietnameseTones(doc.link || "");
+                        const date = removeVietnameseTones(doc.date || "");
+                        const time = removeVietnameseTones(doc.time || "");
 
-                        return title.includes(searchText) || link.includes(searchText);
+                        const fullText = `${title} ${category} ${link} ${date} ${time}`;
+
+                        return fullText.includes(searchText);
                     });
                 }
 
@@ -400,6 +407,14 @@ function renderHomePageDocuments() {
             renderMainDocs();
             renderPagination();
             renderFeaturedDocs();
+
+            /* Nhận từ khóa từ thanh tìm kiếm mobile khi chuyển về index.html?q=... */
+            const urlKeyword = new URLSearchParams(window.location.search).get("q");
+
+            if (urlKeyword && searchInput) {
+                searchInput.value = urlKeyword;
+                searchDocs();
+            }
         })
         .catch(error => {
             console.error("Không đọc được documents.json ở trang chủ:", error);
@@ -408,64 +423,6 @@ function renderHomePageDocuments() {
 
 renderHomePageDocuments();
 // ===== MENU CHUYÊN MỤC MOBILE =====
-
-// ===== MOBILE BAR GIỐNG BQP =====
-
-function updateMobileDate() {
-    const mobileDate = document.getElementById("mobileDate");
-    if (!mobileDate) return;
-
-    const now = new Date();
-
-    const weekdays = [
-        "Chủ nhật",
-        "Thứ Hai",
-        "Thứ Ba",
-        "Thứ Tư",
-        "Thứ Năm",
-        "Thứ Sáu",
-        "Thứ Bảy"
-    ];
-
-    const dayName = weekdays[now.getDay()];
-    const day = now.getDate();
-    const month = now.getMonth() + 1;
-    const year = now.getFullYear();
-
-    mobileDate.textContent = `${dayName}, ${day}/${month}/${year}`;
-}
-
-updateMobileDate();
-
-const openCategoryMenu = document.getElementById("openCategoryMenu");
-const closeCategoryMenu = document.getElementById("closeCategoryMenu");
-const mobileCategoryPanel = document.getElementById("mobileCategoryPanel");
-const mobileMenuOverlay = document.getElementById("mobileMenuOverlay");
-
-if (openCategoryMenu && closeCategoryMenu && mobileCategoryPanel && mobileMenuOverlay) {
-
-    function closeMobileMenu() {
-        mobileCategoryPanel.classList.remove("show");
-        mobileMenuOverlay.classList.remove("show");
-        openCategoryMenu.classList.remove("active");
-    }
-
-    openCategoryMenu.addEventListener("click", () => {
-        const isOpen = mobileCategoryPanel.classList.contains("show");
-
-        if (isOpen) {
-            closeMobileMenu();
-        } else {
-            mobileCategoryPanel.classList.add("show");
-            mobileMenuOverlay.classList.add("show");
-            openCategoryMenu.classList.add("active");
-        }
-    });
-
-    closeCategoryMenu.addEventListener("click", closeMobileMenu);
-
-    mobileMenuOverlay.addEventListener("click", closeMobileMenu);
-}
 /* ===== MENU MOBILE 2 CẤP GIỐNG BQP ===== */
 document.addEventListener("DOMContentLoaded", function () {
     createBqpMobileMenu();
@@ -652,4 +609,75 @@ function createBqpMobileMenu() {
     });
 
     showLevel1();
+}
+/* ===== NÚT TÌM KIẾM TRÊN THANH MOBILE ===== */
+document.addEventListener("DOMContentLoaded", function () {
+    setupMobileSearch();
+});
+
+function setupMobileSearch() {
+    const mobileBar = document.querySelector(".mobile-bqp-bar");
+    const searchBtn = document.querySelector(".mobile-search-btn");
+
+    if (!mobileBar || !searchBtn) return;
+
+    let searchPanel = document.querySelector(".mobile-search-panel");
+
+    if (!searchPanel) {
+        searchPanel = document.createElement("div");
+        searchPanel.className = "mobile-search-panel";
+
+        searchPanel.innerHTML = `
+            <input type="text" id="mobileSearchInput" placeholder="Nhập nội dung tìm kiếm...">
+            <button type="button" id="mobileSearchSubmit">
+                <i class="fas fa-search"></i>
+            </button>
+        `;
+
+        mobileBar.insertAdjacentElement("afterend", searchPanel);
+    }
+
+    const mobileSearchInput = document.getElementById("mobileSearchInput");
+    const mobileSearchSubmit = document.getElementById("mobileSearchSubmit");
+
+    searchBtn.addEventListener("click", function () {
+        searchPanel.classList.toggle("show");
+
+        if (searchPanel.classList.contains("show")) {
+            setTimeout(() => {
+                mobileSearchInput.focus();
+            }, 100);
+        }
+    });
+
+    function doMobileSearch() {
+        const keyword = mobileSearchInput.value.trim();
+
+        if (!keyword) return;
+
+        const homeSearchInput = document.getElementById("homeSearchInput");
+        const homeSearchBtn = document.getElementById("homeSearchBtn");
+
+        if (homeSearchInput && homeSearchBtn) {
+            homeSearchInput.value = keyword;
+            homeSearchBtn.click();
+
+            searchPanel.classList.remove("show");
+
+            homeSearchInput.scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
+        } else {
+            window.location.href = "index.html?q=" + encodeURIComponent(keyword);
+        }
+    }
+
+    mobileSearchSubmit.addEventListener("click", doMobileSearch);
+
+    mobileSearchInput.addEventListener("keydown", function (e) {
+        if (e.key === "Enter") {
+            doMobileSearch();
+        }
+    });
 }
