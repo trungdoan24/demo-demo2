@@ -755,3 +755,55 @@ function createGlobalSearchBox() {
         }
     });
 }
+/* ================================================= */
+/* FOOTER DÙNG CHUNG CHO TẤT CẢ TRANG HTML */
+/* ================================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+    createSiteFooter();
+});
+
+function createSiteFooter() {
+    /*
+        Nếu trang đã có footer rồi thì không tạo thêm.
+        Tránh bị lặp footer ở index.html.
+    */
+    if (document.querySelector(".site-footer")) return;
+
+    const footer = document.createElement("footer");
+    footer.className = "site-footer";
+
+    footer.innerHTML = `
+        <div class="footer-main">
+            <div class="footer-info">
+                <h2>© 2026 CỔNG THÔNG TIN ĐIỆN TỬ TRUNG ĐOÀN 24</h2>
+
+                <p>Địa chỉ: Trung đoàn 24, Thôn 2, Xã Đăk Tô, Tỉnh Quảng Ngãi</p>
+                <p>Điện thoại: ................................</p>
+                <p>Email: ................................</p>
+            </div>
+
+            <div class="footer-social">
+                <h2>THEO DÕI CHÚNG TÔI</h2>
+
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/groups/690650291691522/about" target="_blank" title="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+
+                    <a href="#" title="Zalo" class="zalo-icon">Zalo</a>
+
+                    <a href="#" title="TikTok">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+
+                    <a href="#" title="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    `;
+
+    document.body.appendChild(footer);
+}
