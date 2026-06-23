@@ -1712,9 +1712,7 @@ body {
     overflow-y: auto !important;
 }
 
-body {
-    position: relative !important;
-}
+
 
 @media screen and (max-width: 768px) {
 
@@ -1997,5 +1995,253 @@ body {
 
     .global-search-box {
         display: none !important;
+    }
+}
+
+/* ================================================= */
+/* FOOTER CHÍNH THỨC - TRUNG ĐOÀN 24 */
+/* Màu xanh đồng bộ menu: #006B1F */
+/* ================================================= */
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Footer */
+.site-footer {
+    width: 100%;
+    margin-top: auto !important;
+    margin-bottom: 0 !important;
+    padding: 0 !important;
+    background: #006B1F !important;
+    color: #fff;
+    overflow: hidden;
+    position: relative;
+    border-top: 3px solid #00C853;
+    flex-shrink: 0;
+}
+
+/* Nền vòng tròn mờ */
+.site-footer::before {
+    content: "";
+    position: absolute;
+    left: 18%;
+    bottom: -210px;
+    width: 620px;
+    height: 620px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 0, 0.07);
+    box-shadow:
+        0 0 0 32px rgba(255, 255, 0, 0.025),
+        0 0 0 64px rgba(255, 255, 0, 0.02),
+        0 0 0 96px rgba(255, 255, 0, 0.015);
+    pointer-events: none;
+}
+
+/* Khối nội dung chính */
+.footer-main {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 54px 36px 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 70px;
+    position: relative;
+    z-index: 1;
+    box-sizing: border-box;
+}
+
+.footer-info {
+    flex: 1;
+    min-width: 0;
+    text-align: left;
+}
+
+.footer-social {
+    width: 330px;
+    flex-shrink: 0;
+    text-align: left;
+}
+
+/* Tiêu đề footer */
+.footer-info h2,
+.footer-social h2 {
+    margin: 0 0 24px 0 !important;
+    padding: 0 !important;
+    color: #fff;
+    font-size: 24px;
+    line-height: 1.35;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-align: left;
+    white-space: normal !important;
+    word-break: normal;
+    overflow-wrap: break-word;
+}
+
+.footer-info p {
+    margin: 5px 0;
+    color: #fff;
+    font-size: 15px;
+    line-height: 1.65;
+    font-weight: 600;
+    text-align: left;
+}
+
+/* Icon mạng xã hội */
+.social-icons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.social-icons a {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.16);
+    color: #fff !important;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 800;
+    transition: 0.25s;
+}
+
+.social-icons a:hover {
+    background: #FFD400;
+    color: #006B1F !important;
+    transform: translateY(-2px);
+}
+
+.zalo-icon {
+    font-size: 13px !important;
+    font-family: Arial, sans-serif;
+}
+
+/* Thanh đỏ cuối footer */
+.footer-note {
+    width: 100%;
+    margin: 0 !important;
+    padding: 13px 16px;
+    box-sizing: border-box;
+    background: #c20f0f !important;
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.45;
+    font-weight: 700;
+    position: relative;
+    z-index: 2;
+}
+
+/* ================================================= */
+/* TABLET */
+/* ================================================= */
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .footer-main {
+        display: block;
+        padding: 42px 30px 40px;
+    }
+
+    .footer-info,
+    .footer-social {
+        width: 100%;
+    }
+
+    .footer-social {
+        margin-top: 28px;
+    }
+
+    .footer-info h2,
+    .footer-social h2 {
+        font-size: 21px;
+        line-height: 1.4;
+    }
+
+    .social-icons {
+        justify-content: flex-start;
+    }
+}
+
+/* ================================================= */
+/* MOBILE */
+/* ================================================= */
+
+@media screen and (max-width: 768px) {
+    body {
+        min-height: 100vh;
+    }
+
+    .site-footer {
+        margin-top: auto !important;
+        margin-bottom: 0 !important;
+    }
+
+    .footer-main {
+        display: block;
+        padding: 32px 18px 28px;
+    }
+
+    .footer-info,
+    .footer-social {
+        width: 100%;
+        text-align: left;
+    }
+
+    .footer-info h2,
+    .footer-social h2 {
+        font-size: 17px;
+        line-height: 1.4;
+        margin-bottom: 16px !important;
+        text-align: left;
+        white-space: normal !important;
+        word-break: normal;
+        overflow-wrap: break-word;
+    }
+
+    .footer-info p {
+        font-size: 13px;
+        line-height: 1.55;
+        font-weight: 500;
+    }
+
+    .footer-social {
+        margin-top: 24px;
+    }
+
+    .social-icons {
+        gap: 10px;
+        justify-content: flex-start;
+    }
+
+    .social-icons a {
+        width: 36px;
+        height: 36px;
+        font-size: 17px;
+    }
+
+    .footer-note {
+        font-size: 11px;
+        line-height: 1.45;
+        padding: 10px 12px;
+        margin-bottom: 0 !important;
     }
 }
