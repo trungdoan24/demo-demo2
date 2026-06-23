@@ -1259,7 +1259,7 @@ body {
     }
 
     .mobile-category-header h3 {
-        font-size: 14px !important;
+        font-size: 20px !important;
         font-weight: 700;
         color: #333;
     }
@@ -1979,4 +1979,35 @@ body.mobile-menu-open {
 .mobile-category-panel {
     overflow-y: auto !important;
     overscroll-behavior: contain !important;
+}
+
+/* ================================================= */
+/* TIÊU ĐỀ VĂN BẢN MỚI NHẤT - TRANG CHỦ */
+/* ================================================= */
+
+.latest-doc-title {
+    border-bottom: 1px solid #d6d6d6;
+    margin-bottom: 22px;
+}
+
+.latest-doc-title h2 {
+    display: inline-block;
+    margin: 0;
+    padding-bottom: 8px;
+    color: #008C2F;
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-bottom: 3px solid #00C853;
+}
+
+/* Mobile */
+@media screen and (max-width: 768px) {
+    .latest-doc-title {
+        margin-bottom: 18px;
+    }
+
+    .latest-doc-title h2 {
+        font-size: 21px;
+    }
 }
