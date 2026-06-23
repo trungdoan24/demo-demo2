@@ -509,7 +509,7 @@ function createBqpMobileMenu() {
             <div class="mobile-menu-level" id="menu-quansu" data-title="Quân sự">
                 <ul class="mobile-category-list">
                     <li><a href="quansu.html">Tất cả văn bản Quân sự</a></li>
-                    <li><a href="dldn.html">Điều lệnh đội ngũ</a></li>
+                    <li><a href="ĐLĐN.html">Điều lệnh đội ngũ</a></li>
                 </ul>
             </div>
 
