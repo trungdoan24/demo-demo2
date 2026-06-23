@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CHIẾN LỆ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <header class="banner-header">
+        <img src="images/1857f1a2-c366-44b4-a1b6-1f76a77bbc59.png" alt="Cổng thông tin Trung đoàn 24">
+    </header>
+    <div class="mobile-bqp-bar">
+        <button class="mobile-menu-btn" id="openCategoryMenu">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <span class="mobile-date" id="mobileDate"></span>
+
+        <button class="mobile-search-btn">
+            <i class="fas fa-search"></i>
+        </button>
+
+        <span class="mobile-lang">EN</span>
+    </div>
+
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+
+    <div class="mobile-category-panel" id="mobileCategoryPanel">
+        <div class="mobile-category-header">
+            <h3>Chuyên mục</h3>
+            <button class="close-category-btn" id="closeCategoryMenu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <ul class="mobile-category-list">
+            <li><a href="index.html">Trang chủ</a></li>
+            <li><a href="quansu.html">Quân sự</a></li>
+            <li><a href="chinhtri.html">Chính trị</a></li>
+            <li><a href="haucankythuat.html">Hậu cần kỹ thuật</a></li>
+            <li><a href="chuyendoiso.html">Chuyển đổi số</a></li>
+        </ul>
+    </div>
+    <nav class="navbar">
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="menu">
+            <li><a href="index.html"><i class="fas fa-home"></i></a></li>
+            <li><a href="quansu.html">QUÂN SỰ</a></li>
+            <li><a href="chinhtri.html">CHÍNH TRỊ</a></li>
+            <li><a href="haucankythuat.html">HẬU CẦN KỸ THUẬT</a></li>
+            <li><a href="chuyendoiso.html">CHUYỂN ĐỔI SỐ</a></li>
+        </ul>
+    </nav>
+
+    <div class="page-layout">
+
+        <main class="main-news">
+
+            <div class="breadcrumb">
+                Trang chủ » Quân sự » Chiến lệ
+            </div>
+
+            <div class="section-title-bqp">
+                <h2>CHIẾN LỆ</h2>
+            </div>
+            <div id="documentList"></div>
+            <div class="pagination" id="document-pagination"></div>
+
+
+        </main>
+
+        <aside class="right-category">
+
+            <h2>QUÂN SỰ</h2>
+
+            <ul>
+                <li><a href="chienle.html">CHIẾN LỆ</a></li>
+                <li><a href="#">SSCĐ</a></li>
+                <li><a href="#">Xây dựng lực lượng</a></li>
+                <li><a href="#">XDCQ-QLKL</a></li>
+                <li><a href="#">ĐLQLBĐ</a></li>
+                <li><a href="ĐLĐN.html" class="active-menu">ĐLĐN</a></li>
+                <li><a href="#">KTCĐBB</a></li>
+                <li><a href="#">CTBB</a></li>
+                <li><a href="#">Thể lực</a></li>
+            </ul>
+
+        </aside>
+
+    </div>
+
+    <footer>© 2026 CỔNG THÔNG TIN NỘI BỘ</footer>
+    <script>
+        window.DOCUMENT_FOLDER = "sohoa/QUANSU/CHIENLE/";
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>
