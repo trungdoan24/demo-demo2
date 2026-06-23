@@ -479,7 +479,7 @@ function createBqpMobileMenu() {
                     <li>
                         <button class="mobile-parent" data-target="menu-quansu" type="button">
                             <span>Quân sự</span>
-                            <em>1</em>
+                            <em>2</em>
                         </button>
                     </li>
 
@@ -509,6 +509,7 @@ function createBqpMobileMenu() {
             <div class="mobile-menu-level" id="menu-quansu" data-title="Quân sự">
                 <ul class="mobile-category-list">
                     <li><a href="quansu.html">Tất cả văn bản Quân sự</a></li>
+                    <li><a href="chienle.html">Chiến lệ</a></li>
                     <li><a href="ĐLĐN.html">Điều lệnh đội ngũ</a></li>
                 </ul>
             </div>
