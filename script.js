@@ -560,13 +560,27 @@ function createBqpMobileMenu() {
     function openMenu() {
         panel.classList.add("show");
         overlay.classList.add("show");
+
+        document.documentElement.classList.add("mobile-menu-open");
+        document.body.classList.add("mobile-menu-open");
     }
 
     function closeMenu() {
         panel.classList.remove("show");
         overlay.classList.remove("show");
+
+        document.documentElement.classList.remove("mobile-menu-open");
+        document.body.classList.remove("mobile-menu-open");
+
         showLevel1();
     }
+    /* Khi bấm vào link trong menu thì mở khóa cuộn lại */
+    panel.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", function () {
+            document.documentElement.classList.remove("mobile-menu-open");
+            document.body.classList.remove("mobile-menu-open");
+        });
+    });
 
     function showLevel1() {
         document.querySelectorAll(".mobile-menu-level").forEach(level => {
