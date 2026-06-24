@@ -821,3 +821,188 @@ function createSiteFooter() {
 
     document.body.appendChild(footer);
 }
+/* ================================================= */
+/* TAB NĂM 1 - NĂM 2 CHO TRANG GIÁO ÁN HSQ, BS */
+/* ================================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+    const tabButtons = document.querySelectorAll(".hsqbs-tab");
+    const menuButtons = document.querySelectorAll(".hsqbs-year-btn");
+    const documentList = document.getElementById("documentList");
+    const pagination = document.getElementById("document-pagination");
+
+    if (!tabButtons.length || !documentList) return;
+
+    let allDocs = [];
+    let currentYear = "nam1";
+    let currentPage = 1;
+    const docsPerPage = 10;
+
+    const YEAR_KEYWORDS = {
+        nam1: ["nam 1", "nam1", "năm 1", "hsq bs nam 1", "hsq-bs-nam-1"],
+        nam2: ["nam 2", "nam2", "năm 2", "hsq bs nam 2", "hsq-bs-nam-2"]
+    };
+
+    function removeVietnameseTonesLocal(str) {
+        return (str || "")
+            .toString()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/đ/g, "d")
+            .replace(/Đ/g, "D")
+            .replace(/[^\w\s/.-]/g, " ")
+            .replace(/\s+/g, " ")
+            .trim()
+            .toLowerCase();
+    }
+
+    function isHsqbsDoc(doc) {
+        const text = removeVietnameseTonesLocal(
+            `${doc.title || ""} ${doc.link || ""} ${doc.category || ""}`
+        );
+
+        return (
+            text.includes("hsq") ||
+            text.includes("bs") ||
+            text.includes("giao an")
+        );
+    }
+
+    function isYearDoc(doc, year) {
+        const text = removeVietnameseTonesLocal(
+            `${doc.title || ""} ${doc.link || ""}`
+        );
+
+        return YEAR_KEYWORDS[year].some(keyword => {
+            return text.includes(removeVietnameseTonesLocal(keyword));
+        });
+    }
+
+    function formatDate(doc) {
+        const time = doc.time || "";
+        const date = doc.date || "";
+
+        if (!date) return "";
+
+        const parts = date.split("-");
+        if (parts.length === 3) {
+            return `${time} | ${parts[2]}/${parts[1]}/${parts[0]}`;
+        }
+
+        return `${time} | ${date}`;
+    }
+
+    function getFilteredDocs() {
+        return allDocs.filter(doc => {
+            return isHsqbsDoc(doc) && isYearDoc(doc, currentYear);
+        });
+    }
+
+    function renderDocs() {
+        const docs = getFilteredDocs();
+        const start = (currentPage - 1) * docsPerPage;
+        const pageDocs = docs.slice(start, start + docsPerPage);
+
+        if (!pageDocs.length) {
+            documentList.innerHTML = `
+                <div class="home-doc-empty">
+                    Chưa có văn bản thuộc mục này.
+                </div>
+            `;
+
+            if (pagination) pagination.innerHTML = "";
+            return;
+        }
+
+        documentList.innerHTML = pageDocs.map(doc => {
+            return `
+                <article class="news-item-bqp">
+                    <h3>
+                        <a href="${doc.link}" target="_blank">
+                            ${doc.title}
+                        </a>
+                    </h3>
+
+                    <p>${formatDate(doc)}</p>
+
+                    <span>Tài liệu văn bản</span>
+                </article>
+            `;
+        }).join("");
+
+        renderPagination(docs.length);
+    }
+
+    function renderPagination(totalDocs) {
+        if (!pagination) return;
+
+        const totalPages = Math.ceil(totalDocs / docsPerPage);
+
+        if (totalPages <= 1) {
+            pagination.innerHTML = "";
+            return;
+        }
+
+        let html = "";
+
+        for (let i = 1; i <= totalPages; i++) {
+            html += `
+                <button type="button" class="${i === currentPage ? "active" : ""}" data-page="${i}">
+                    ${i}
+                </button>
+            `;
+        }
+
+        pagination.innerHTML = html;
+
+        pagination.querySelectorAll("button").forEach(btn => {
+            btn.addEventListener("click", function () {
+                currentPage = Number(this.dataset.page);
+                renderDocs();
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            });
+        });
+    }
+
+    function setActiveYear(year) {
+        currentYear = year;
+        currentPage = 1;
+
+        tabButtons.forEach(btn => {
+            btn.classList.toggle("active", btn.dataset.year === year);
+        });
+
+        menuButtons.forEach(btn => {
+            btn.classList.toggle("active", btn.dataset.year === year);
+        });
+
+        renderDocs();
+    }
+
+    tabButtons.forEach(btn => {
+        btn.addEventListener("click", function () {
+            setActiveYear(this.dataset.year);
+        });
+    });
+
+    menuButtons.forEach(btn => {
+        btn.addEventListener("click", function () {
+            setActiveYear(this.dataset.year);
+        });
+    });
+
+    fetch("data/documents.json")
+        .then(response => response.json())
+        .then(data => {
+            allDocs = Array.isArray(data) ? data : [];
+            setActiveYear("nam1");
+        })
+        .catch(error => {
+            documentList.innerHTML = `
+                <div class="home-doc-empty">
+                    Không tải được dữ liệu văn bản.
+                </div>
+            `;
+            console.error("Lỗi tải documents.json:", error);
+        });
+});
