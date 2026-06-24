@@ -2141,3 +2141,12 @@ body.mobile-menu-open {
         display: none;
     }
 }
+
+/* Tiêu đề văn bản hiển thị IN HOA */
+.news-item-bqp h3,
+.news-item-bqp h3 a,
+.document-title,
+.document-item h3,
+.document-item h3 a {
+    text-transform: uppercase !important;
+}
