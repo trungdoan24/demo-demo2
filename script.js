@@ -93,7 +93,10 @@ document.addEventListener("DOMContentLoaded", () => {
 function renderDocumentsFromJson() {
     const list = document.getElementById("documentList");
     const pagination = document.getElementById("document-pagination");
-
+    /* Không dùng hàm render chung cho trang Giáo án HSQ, BS */
+    if (window.location.pathname.toLowerCase().includes("giaoanhsqbs.html")) {
+        return;
+    }
     if (!list || !pagination) return;
 
     const folder = window.DOCUMENT_FOLDER || "";
@@ -823,9 +826,14 @@ function createSiteFooter() {
 }
 /* ================================================= */
 /* TAB NĂM 1 - NĂM 2 CHO TRANG GIÁO ÁN HSQ, BS */
+/* Dùng được với link Cloudflare R2 đã mã hóa URL */
 /* ================================================= */
 
 document.addEventListener("DOMContentLoaded", function () {
+    const pagePath = window.location.pathname.toLowerCase();
+
+    if (!pagePath.includes("giaoanhsqbs.html")) return;
+
     const tabButtons = document.querySelectorAll(".hsqbs-tab");
     const menuButtons = document.querySelectorAll(".hsqbs-year-btn");
     const documentList = document.getElementById("documentList");
@@ -838,13 +846,16 @@ document.addEventListener("DOMContentLoaded", function () {
     let currentPage = 1;
     const docsPerPage = 10;
 
-    const YEAR_KEYWORDS = {
-        nam1: ["nam 1", "nam1", "năm 1", "hsq bs nam 1", "hsq-bs-nam-1"],
-        nam2: ["nam 2", "nam2", "năm 2", "hsq bs nam 2", "hsq-bs-nam-2"]
-    };
+    function normalizeText(str) {
+        str = str || "";
 
-    function removeVietnameseTonesLocal(str) {
-        return (str || "")
+        try {
+            str = decodeURIComponent(str);
+        } catch (e) {
+            str = str;
+        }
+
+        return str
             .toString()
             .normalize("NFD")
             .replace(/[\u0300-\u036f]/g, "")
@@ -857,25 +868,33 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function isHsqbsDoc(doc) {
-        const text = removeVietnameseTonesLocal(
+        const text = normalizeText(
             `${doc.title || ""} ${doc.link || ""} ${doc.category || ""}`
         );
 
         return (
-            text.includes("hsq") ||
-            text.includes("bs") ||
-            text.includes("giao an")
+            text.includes("baigiangchinhtri") &&
+            text.includes("giao an hsq") &&
+            text.includes("bs")
         );
     }
 
     function isYearDoc(doc, year) {
-        const text = removeVietnameseTonesLocal(
-            `${doc.title || ""} ${doc.link || ""}`
+        const text = normalizeText(
+            `${doc.title || ""} ${doc.link || ""} ${doc.category || ""}`
         );
 
-        return YEAR_KEYWORDS[year].some(keyword => {
-            return text.includes(removeVietnameseTonesLocal(keyword));
-        });
+        if (!isHsqbsDoc(doc)) return false;
+
+        if (year === "nam1") {
+            return text.includes("nam 1");
+        }
+
+        if (year === "nam2") {
+            return text.includes("nam 2");
+        }
+
+        return false;
     }
 
     function formatDate(doc) {
@@ -885,6 +904,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (!date) return "";
 
         const parts = date.split("-");
+
         if (parts.length === 3) {
             return `${time} | ${parts[2]}/${parts[1]}/${parts[0]}`;
         }
@@ -894,12 +914,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function getFilteredDocs() {
         return allDocs.filter(doc => {
-            return isHsqbsDoc(doc) && isYearDoc(doc, currentYear);
+            return isYearDoc(doc, currentYear);
         });
     }
 
     function renderDocs() {
         const docs = getFilteredDocs();
+
+        docs.sort((a, b) => {
+            const dateA = new Date(`${a.date}T${a.time || "00:00"}`);
+            const dateB = new Date(`${b.date}T${b.time || "00:00"}`);
+            return dateB - dateA;
+        });
+
         const start = (currentPage - 1) * docsPerPage;
         const pageDocs = docs.slice(start, start + docsPerPage);
 
@@ -945,6 +972,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
         let html = "";
 
+        html += `
+            <button type="button" data-page="${Math.max(1, currentPage - 1)}">
+                &lt;&lt;
+            </button>
+        `;
+
         for (let i = 1; i <= totalPages; i++) {
             html += `
                 <button type="button" class="${i === currentPage ? "active" : ""}" data-page="${i}">
@@ -953,13 +986,23 @@ document.addEventListener("DOMContentLoaded", function () {
             `;
         }
 
+        html += `
+            <button type="button" data-page="${Math.min(totalPages, currentPage + 1)}">
+                &gt;&gt;
+            </button>
+        `;
+
         pagination.innerHTML = html;
 
         pagination.querySelectorAll("button").forEach(btn => {
             btn.addEventListener("click", function () {
                 currentPage = Number(this.dataset.page);
                 renderDocs();
-                window.scrollTo({ top: 0, behavior: "smooth" });
+
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
             });
         });
     }
@@ -1003,6 +1046,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     Không tải được dữ liệu văn bản.
                 </div>
             `;
+
             console.error("Lỗi tải documents.json:", error);
         });
 });
